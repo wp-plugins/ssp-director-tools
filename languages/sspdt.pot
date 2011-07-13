@@ -1,0 +1,337 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: SSP Director Tools\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-05-19 19:17+0100\n"
+"PO-Revision-Date: 2011-05-19 19:17+0100\n"
+"Last-Translator: Matthias Scheidl <matthias@scheidl.name>\n"
+"Language-Team: Matthias Scheidl <matthias@scheidl.name>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
+"X-Poedit-SearchPath-0: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools\n"
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/deprecated/photogrid_widget.php:10
+msgid "Photo Grid"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/deprecated/sspdt-options-page.php:9
+msgid "SlideShowPro Director Tools Options"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/deprecated/sspdt-options-page.php:16
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:322
+msgid "Update settings"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/deprecated/sspdt-options-page.php:28
+msgid "API Information"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/deprecated/sspdt-options-page.php:29
+msgid "API key"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/deprecated/sspdt-options-page.php:30
+msgid "API path"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/deprecated/sspdt-options-page.php:31
+msgid "API cache"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/deprecated/sspdt-options-page.php:33
+msgid "Image Sizes and Handling"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/deprecated/sspdt-options-page.php:35
+msgid "Image Presentation"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/deprecated/sspdt-options-page.php:41
+msgid "Enter SSP Director API key and path info here. You can find these values on the \"System Info\" page of your Director installation."
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/deprecated/sspdt-options-page.php:45
+msgid "Define image sizes and how images should fit into."
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/deprecated/sspdt-options-page.php:49
+msgid "Select a tool for image presentation."
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/deprecated/sspdt-options-page.php:75
+#, php-format
+msgid "<div class='updated fade'>Your cache directory is not writable. You can't activate caching unless you allow your webserver to write to <code>'wp-content/plugins/%s/api/cache'</code>.</div>"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/deprecated/sspdt-options-page.php:81
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:159
+msgid "Enabled"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/deprecated/sspdt-options-page.php:86
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:161
+msgid "Disabled"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:8
+msgid "Cheatin&#8217; uh?"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:19
+msgid "Settings have been saved."
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:28
+msgid "API Settings seem wrong. Please double check them."
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:79
+msgid "Your PHP version is too old."
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:80
+msgid "The DirectorPHP API needs at least PHP 5. Please install it or get in touch with your internet provider or system administrator"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:87
+msgid "php_curl is not installed."
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:88
+msgid "SSP Director Tools need php_curl be installed to work properly."
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:114
+msgid "SlideShowPro Director Tools"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:120
+msgid "API Key Settings"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:121
+msgid "The settings can be found on the \"System Info\" page of your SlideShowPro Director installation."
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:126
+msgid "API Key"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:133
+msgid "API Path"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:144
+msgid "Caching disabled"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:146
+#, php-format
+msgid "Your cache directory %s is not writable."
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:148
+msgid "You must allow your web server to write to it in order to enable caching."
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:155
+msgid "API Cache"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:159
+msgid "The API cache can improve performance dramatically."
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:166
+msgid "Image Sizes an Handling"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:167
+msgid "Define image sizes, quality and cropping."
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:171
+msgid "Width"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:172
+msgid "Height"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:173
+msgid "Quality"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:174
+msgid "Cropping"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:175
+msgid "Sharpening"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:179
+msgid "Grid"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:192
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:214
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:236
+msgid "Crop image"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:196
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:218
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:240
+msgid "Sharpen image"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:201
+msgid "Thumbnail"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:223
+msgid "Image"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:245
+msgid "Gallery Defaults"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:246
+msgid "Default settings for SSP Director Galleries."
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:247
+msgid "These settings can be overridden by individual galleries."
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:251
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/SSPDT_Widget.php:47
+msgid "Scope"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:255
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:290
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/SSPDT_Widget.php:49
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/SSPDT_Widget.php:67
+msgid "-- Not specified --"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:256
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/SSPDT_Widget.php:50
+msgid "Gallery"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:257
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/SSPDT_Widget.php:51
+msgid "Album"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:264
+msgid "Limit"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:268
+msgid "Leave blank if no limit should be specified."
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:273
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/SSPDT_Widget.php:58
+msgid "Tags"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:278
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/SSPDT_Widget.php:61
+msgid "all"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:279
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/SSPDT_Widget.php:62
+msgid "one"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:281
+msgid "Leave blank if no tags should be specified."
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:286
+msgid "Sort"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:291
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/SSPDT_Widget.php:68
+msgid "Creation Date"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:292
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/SSPDT_Widget.php:69
+msgid "Capture Date"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:293
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/SSPDT_Widget.php:70
+msgid "Modification Date"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:294
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/SSPDT_Widget.php:71
+msgid "File Name"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:295
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/SSPDT_Widget.php:72
+msgid "Random"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:298
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/SSPDT_Widget.php:75
+msgid "ascending"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:299
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/SSPDT_Widget.php:76
+msgid "descending"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:305
+msgid "Presentation"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:306
+msgid "Select a tool for image presentation"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/sspdt-options-page.php:310
+msgid "Gallery Tool"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/SSPDT_Widget.php:12
+msgid "Displays a photogrid populated with SSP Director content."
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/SSPDT_Widget.php:18
+msgid "Director Photogrid"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/SSPDT_Widget.php:24
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/SSPDT_Widget.php:44
+msgid "Title"
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/SSPDT_Widget.php:56
+#, php-format
+msgid "Limit to <input name=\"%s\" type=\"text\" size=\"3\" value=\"%s\"/> images."
+msgstr ""
+
+#: /Users/matthias/Documents/workspace/wordpress/wp-content/plugins/ssp-director-tools/includes/SSPDT_Widget.php:65
+msgid "Sort by"
+msgstr ""
+

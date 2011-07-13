@@ -1,0 +1,22 @@
+div.sspdt_feedlink {
+	vertical-align: middle;
+	margin-top: 10px
+}
+
+div.sspdt_feedlink img {
+	margin-right: 6px;
+	vertical-align: middle;
+	border-style: none;
+}
+
+div.sspdt_feedlink a {
+	vertical-align: middle;
+}
+
+.sspdt_grid {
+	border-style: none !important;
+}
+
+.sspdt_thumb {
+	border-style: none !important;
+}

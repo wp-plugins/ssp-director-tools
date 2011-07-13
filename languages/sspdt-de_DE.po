@@ -1,0 +1,530 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: SSP Director Tools\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-07-12 18:04+0100\n"
+"PO-Revision-Date: 2011-07-12 18:04+0100\n"
+"Last-Translator: Matthias Scheidl <matthias@scheidl.name>\n"
+"Language-Team: Matthias Scheidl <dev@scheidl.name>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../includes/sspdt-options-page.php:8
+msgid "Cheatin&#8217; uh?"
+msgstr "Schummeln Sie etwa?"
+
+#: ../includes/sspdt-options-page.php:22
+msgid "Settings have been saved."
+msgstr "Die Einstellungen wurden gespeichert."
+
+#: ../includes/sspdt-options-page.php:38
+msgid "API Settings seem wrong. Please double check them."
+msgstr "Die API Einstellungen sind offensichtlich nicht korrekt. Bitte überprüfen Sie sie."
+
+#: ../includes/sspdt-options-page.php:123
+msgid "You must define the API settings. Otherwise this plugin won't work."
+msgstr "Sie müssen die API Einstellungen festlegen, sonst funktioniert dieses Plugin nicht."
+
+#: ../includes/sspdt-options-page.php:215
+msgid "Your PHP version is too old."
+msgstr "Die Version von PHP auf diesem Server ist zu alt."
+
+#: ../includes/sspdt-options-page.php:218
+msgid "The DirectorPHP API needs at least PHP 5. Please install it or get in touch with your internet provider or system administrator"
+msgstr "Die DirectorPHP API benötigt mindestens PHP 5. Bitte installieren sie PHP 5."
+
+#: ../includes/sspdt-options-page.php:227
+msgid "php_curl is not installed."
+msgstr "php_curl ist nicht installiert."
+
+#: ../includes/sspdt-options-page.php:230
+msgid "SSP Director Tools need php_curl be installed to work properly."
+msgstr "php_curl muss installiert sein, damit SSP Director Tools korrekt funktionieren."
+
+#: ../includes/sspdt-options-page.php:258
+msgid "SlideShowPro Director Tools"
+msgstr "SlideShowPro Director Tools"
+
+#: ../includes/sspdt-options-page.php:266
+msgid "API Settings"
+msgstr "API Einstellungen"
+
+#: ../includes/sspdt-options-page.php:269
+msgid "The settings can be found on the \"System Info\" page of your SlideShowPro Director installation."
+msgstr "Die entsprechenden Werte finden Sie auf der Seite \"System Informationen\" Ihrer SlideShowPro Director Installation."
+
+#: ../includes/sspdt-options-page.php:275
+msgid "API Key"
+msgstr "API Schlüssel"
+
+#: ../includes/sspdt-options-page.php:283
+msgid "API Path"
+msgstr "API Pfad"
+
+#: ../includes/sspdt-options-page.php:296
+msgid "Caching disabled"
+msgstr "Caching deaktiviert"
+
+#: ../includes/sspdt-options-page.php:298
+#, php-format
+msgid "Your cache directory %s is not writable."
+msgstr "Ihr Cache Verzeichnis %s ist nicht beschreibbar."
+
+#: ../includes/sspdt-options-page.php:300
+msgid "You must allow your web server to write to it in order to enable caching."
+msgstr "Um das Caching zu aktivieren, müssen Sie dem Web-Server Schreibrecht auf diesem Verzeichnis geben."
+
+#: ../includes/sspdt-options-page.php:306
+msgid "API Cache"
+msgstr "API Cache"
+
+#: ../includes/sspdt-options-page.php:314
+msgid "API Cache activated"
+msgstr "API Cache aktiviert"
+
+#: ../includes/sspdt-options-page.php:315
+msgid "The API cache can improve performance dramatically."
+msgstr "Der API Cache kann die Performanz deutlich steigern."
+
+#: ../includes/sspdt-options-page.php:322
+msgid "Photo Feed Options"
+msgstr "Foto Feed Einstellungen"
+
+#: ../includes/sspdt-options-page.php:325
+msgid "Needed, if you want to use the photo feed functionality."
+msgstr "Wird benötigt, falls Sie die Foto Feed Funktionalität verwenden möchten."
+
+#: ../includes/sspdt-options-page.php:330
+msgid "Photo Feed URL"
+msgstr "Foto Feed URL"
+
+#: ../includes/sspdt-options-page.php:336
+msgid "Secret"
+msgstr "Secret"
+
+#: ../includes/sspdt-options-page.php:344
+msgid "Image Sizes an Handling"
+msgstr "Bildgrössen und -handhabung"
+
+#: ../includes/sspdt-options-page.php:347
+msgid "Define image sizes, quality and cropping."
+msgstr "Bildgrößen, Qualität und Zuschnitt festlegen."
+
+#: ../includes/sspdt-options-page.php:354
+msgid "Width"
+msgstr "Breite"
+
+#: ../includes/sspdt-options-page.php:355
+msgid "Height"
+msgstr "Höhe"
+
+#: ../includes/sspdt-options-page.php:356
+msgid "Quality"
+msgstr "Qualität"
+
+#: ../includes/sspdt-options-page.php:357
+msgid "Cropping"
+msgstr "Zuschnitt"
+
+#: ../includes/sspdt-options-page.php:358
+msgid "Sharpening"
+msgstr "Schärfung"
+
+#: ../includes/sspdt-options-page.php:359
+msgid "Alignment"
+msgstr "Ausrichtung"
+
+#: ../includes/sspdt-options-page.php:360
+#: ../includes/sspdt-options-page.php:615
+msgid "Caption"
+msgstr "Bildunterschrift"
+
+#: ../includes/sspdt-options-page.php:367
+msgid "Grid"
+msgstr "Bildraster"
+
+#: ../includes/sspdt-options-page.php:393
+msgid "Thumbnail"
+msgstr "Vorschau"
+
+#: ../includes/sspdt-options-page.php:416
+#: ../includes/sspdt-options-page.php:709
+#: ../includes/sspdt-options-page.php:739
+msgid "none"
+msgstr "keine"
+
+#: ../includes/sspdt-options-page.php:420
+msgid "left"
+msgstr "links"
+
+#: ../includes/sspdt-options-page.php:424
+msgid "center"
+msgstr "zentriert"
+
+#: ../includes/sspdt-options-page.php:428
+msgid "right"
+msgstr "rechts"
+
+#: ../includes/sspdt-options-page.php:440
+msgid "Image"
+msgstr "Präsentation"
+
+#: ../includes/sspdt-options-page.php:483
+msgid "Photo Grid Defaults"
+msgstr "Foto Grid Standardeinstellungen"
+
+#: ../includes/sspdt-options-page.php:486
+msgid "Default settings for SSP Director Photo Grids."
+msgstr "Standardeinstellungen für SSP Director Foto Grids"
+
+#: ../includes/sspdt-options-page.php:487
+msgid "These settings can be overridden by the photo grid shortcode [sspd] attributes."
+msgstr "Diese Einstellungen können mit den Attributen des Foto Grid Shortcodes [sspd] überschrieben werden."
+
+#: ../includes/sspdt-options-page.php:492
+#: ../includes/SSPDT_Widget.php:75
+msgid "Scope"
+msgstr "Quelle"
+
+#: ../includes/sspdt-options-page.php:498
+#: ../includes/sspdt-options-page.php:549
+#: ../includes/SSPDT_Widget.php:80
+#: ../includes/SSPDT_Widget.php:119
+msgid "-- Not specified --"
+msgstr "-- Ohne Angabe --"
+
+#: ../includes/sspdt-options-page.php:502
+#: ../includes/SSPDT_Widget.php:84
+msgid "Gallery"
+msgstr "Galerie"
+
+#: ../includes/sspdt-options-page.php:506
+#: ../includes/SSPDT_Widget.php:88
+msgid "Album"
+msgstr "Album"
+
+#: ../includes/sspdt-options-page.php:514
+msgid "Limit"
+msgstr "Maximale Anzahl"
+
+#: ../includes/sspdt-options-page.php:517
+msgid "Leave blank if no limit should be specified."
+msgstr "Lassen SIe das Feld leer, wenn Sie die Zahl der Bilder nicht begrenzen wollen."
+
+#: ../includes/sspdt-options-page.php:522
+#: ../includes/SSPDT_Widget.php:98
+msgid "Tags"
+msgstr "Schlüsselwörter"
+
+#: ../includes/sspdt-options-page.php:531
+#: ../includes/SSPDT_Widget.php:104
+msgid "all"
+msgstr "alle"
+
+#: ../includes/sspdt-options-page.php:535
+#: ../includes/SSPDT_Widget.php:108
+msgid "one"
+msgstr "eines"
+
+#: ../includes/sspdt-options-page.php:537
+msgid "Leave blank if no tags should be specified."
+msgstr "Lassen Sie das Feld leer, wenn Sie keine Schlüsselwörter spezifizieren wollen."
+
+#: ../includes/sspdt-options-page.php:542
+msgid "Sort"
+msgstr "Sortierung"
+
+#: ../includes/sspdt-options-page.php:553
+#: ../includes/SSPDT_Widget.php:123
+msgid "Creation Date"
+msgstr "Erstellungsdatum"
+
+#: ../includes/sspdt-options-page.php:557
+#: ../includes/SSPDT_Widget.php:127
+msgid "Capture Date"
+msgstr "Aufnahmedatum"
+
+#: ../includes/sspdt-options-page.php:561
+#: ../includes/SSPDT_Widget.php:131
+msgid "Modification Date"
+msgstr "Änderungsdatum"
+
+#: ../includes/sspdt-options-page.php:565
+#: ../includes/SSPDT_Widget.php:135
+msgid "File Name"
+msgstr "Dateiname"
+
+#: ../includes/sspdt-options-page.php:569
+#: ../includes/SSPDT_Widget.php:139
+msgid "Random"
+msgstr "Zufällig"
+
+#: ../includes/sspdt-options-page.php:576
+#: ../includes/SSPDT_Widget.php:147
+msgid "ascending"
+msgstr "aufsteigend"
+
+#: ../includes/sspdt-options-page.php:580
+#: ../includes/SSPDT_Widget.php:151
+msgid "descending"
+msgstr "absteigend"
+
+#: ../includes/sspdt-options-page.php:586
+msgid "Photo Feed"
+msgstr "Foto Feed"
+
+#: ../includes/sspdt-options-page.php:591
+msgid "Show a link to a photo feed for gallery images."
+msgstr "Einen Foto-Feed Link für die Galerie-Bilder anzeigen."
+
+#: ../includes/sspdt-options-page.php:597
+msgid "Presentation"
+msgstr "Darstellung"
+
+#: ../includes/sspdt-options-page.php:600
+msgid "FancyBox settings for image presentation."
+msgstr "FancyBox Einstellungen für die Bild-Darstellung"
+
+#: ../includes/sspdt-options-page.php:605
+msgid "Box"
+msgstr "Rahmen"
+
+#: ../includes/sspdt-options-page.php:607
+msgid "Padding"
+msgstr "Innenabstand"
+
+#: ../includes/sspdt-options-page.php:610
+msgid "Margin"
+msgstr "Ränder"
+
+#: ../includes/sspdt-options-page.php:618
+msgid "Position:"
+msgstr "Position:"
+
+#: ../includes/sspdt-options-page.php:622
+msgid "outside frame"
+msgstr "außerhalb des Rahmens"
+
+#: ../includes/sspdt-options-page.php:626
+msgid "inside frame"
+msgstr "innerhalb des Rahmens"
+
+#: ../includes/sspdt-options-page.php:630
+msgid "over image"
+msgstr "über dem Bild"
+
+#: ../includes/sspdt-options-page.php:636
+msgid "Overlay"
+msgstr "Overlay"
+
+#: ../includes/sspdt-options-page.php:641
+msgid "Show overlay"
+msgstr "Overlay anzeigen"
+
+#: ../includes/sspdt-options-page.php:642
+msgid "Opacity:"
+msgstr "Deckkraft:"
+
+#: ../includes/sspdt-options-page.php:666
+msgid "Color:"
+msgstr "Farbe:"
+
+#: ../includes/sspdt-options-page.php:672
+msgid "Navigation"
+msgstr "Navigation"
+
+#: ../includes/sspdt-options-page.php:678
+msgid "Cyclic navigation"
+msgstr "Zyklische Navigation"
+
+#: ../includes/sspdt-options-page.php:684
+msgid "Show close button"
+msgstr "Schließen-Button anzeigen"
+
+#: ../includes/sspdt-options-page.php:690
+msgid "Show navigation arrows"
+msgstr "Navigations-Pfeile anzeigen"
+
+#: ../includes/sspdt-options-page.php:696
+msgid "Enable ESC key"
+msgstr "Schließen mit ESC-Taste aktivieren"
+
+#: ../includes/sspdt-options-page.php:701
+msgid "Transitions"
+msgstr "Übergänge"
+
+#: ../includes/sspdt-options-page.php:705
+msgid "In:"
+msgstr "Einwärts:"
+
+#: ../includes/sspdt-options-page.php:713
+#: ../includes/sspdt-options-page.php:743
+msgid "fade"
+msgstr "Überblenden"
+
+#: ../includes/sspdt-options-page.php:717
+#: ../includes/sspdt-options-page.php:747
+msgid "elastic"
+msgstr "Elastisch"
+
+#: ../includes/sspdt-options-page.php:719
+#: ../includes/sspdt-options-page.php:749
+msgid "Speed:"
+msgstr "Dauer:"
+
+#: ../includes/sspdt-options-page.php:722
+#: ../includes/sspdt-options-page.php:752
+msgid "Easing:"
+msgstr "Easing"
+
+#: ../includes/sspdt-options-page.php:726
+#: ../includes/sspdt-options-page.php:756
+msgid "Linear"
+msgstr "Linear"
+
+#: ../includes/sspdt-options-page.php:730
+#: ../includes/sspdt-options-page.php:760
+msgid "Swing"
+msgstr "Swing"
+
+#: ../includes/sspdt-options-page.php:735
+msgid "Out:"
+msgstr "Auswärts:"
+
+#: ../includes/sspdt-options-page.php:765
+msgid "Change speed:"
+msgstr "Dauer des Bildwechsels"
+
+#: ../includes/sspdt-options-page.php:768
+msgid "Speed of resizing when changing gallery items, in milliseconds"
+msgstr "Dauer des Bildwechsels in Millisekunden"
+
+#: ../includes/sspdt-options-page.php:779
+msgid "Update settings"
+msgstr "Einstellungen speichern"
+
+#: ../includes/SSPDT.php:150
+msgid "Aquire these images as photo feed."
+msgstr "Diese Bilder als Foto-Feed beziehen."
+
+#: ../includes/SSPDT_Widget.php:16
+msgid "Displays a photogrid populated with SSP Director content."
+msgstr "Zeigt ein Bildraster aus SSP Director Inhalten an"
+
+#: ../includes/SSPDT_Widget.php:22
+msgid "Director Photogrid"
+msgstr "Director Bildraster"
+
+#: ../includes/SSPDT_Widget.php:33
+#: ../includes/SSPDT_Widget.php:57
+msgid "Title"
+msgstr "Titel"
+
+#: ../includes/SSPDT_Widget.php:63
+msgid "Surrounding HTML Element"
+msgstr "Umschließendes HTML Element"
+
+#: ../includes/SSPDT_Widget.php:95
+#, php-format
+msgid "Limit to <input name=\"%s\" type=\"text\" size=\"3\" value=\"%s\"/> images."
+msgstr "Auf <input name=\"%s\" type=\"text\" size=\"3\" value=\"%s\"/> Bilder begrenzen."
+
+#: ../includes/SSPDT_Widget.php:113
+msgid "Sort by"
+msgstr "Sortierung"
+
+#~ msgid "Incorrect feed parameters."
+#~ msgstr "Falsche Feed"
+
+#~ msgid "Gallery Defaults"
+#~ msgstr "Galerie Standardeinstellungen"
+
+#~ msgid "Show titles"
+#~ msgstr "Titel anzeigen"
+
+#~ msgid "Show counter"
+#~ msgstr "Bildzähler anzeigen"
+
+#~ msgid "SlideShowPro Director Tools Options"
+#~ msgstr "SlideShowPro Director Tools Einstellungen"
+
+#~ msgid "API Information"
+#~ msgstr "API Informationen"
+
+#~ msgid "API key"
+#~ msgstr "API Schlüssel"
+
+#~ msgid "API path"
+#~ msgstr "API Pfad"
+
+#~ msgid "API cache"
+#~ msgstr "API Cache"
+
+#~ msgid "Image Sizes and Handling"
+#~ msgstr "Bildgrößen und -handhabung"
+
+#~ msgid "Image Presentation"
+#~ msgstr "Präsentation"
+
+#~ msgid ""
+#~ "Enter SSP Director API key and path info here. You can find these values "
+#~ "on the \"System Info\" page of your Director installation."
+#~ msgstr ""
+#~ "Tragen Sie hier die Informationen zum SSP Director API ein. Sie finden "
+#~ "diese Werte auf der Seite \"System Einstellungen\" Ihrer Director "
+#~ "Installation."
+
+#~ msgid "Define image sizes and how images should fit into."
+#~ msgstr "Bestimmen Sie Bildgrößen und Bildzuschnitt."
+
+#~ msgid "Select a tool for image presentation."
+#~ msgstr ""
+#~ "Wählen Sie ein Tool für die Präsentation von Bildern und Galerien aus."
+
+#~ msgid ""
+#~ "<div class='updated fade'>Your cache directory is not writable. You can't "
+#~ "activate caching unless you allow your webserver to write to <code>'wp-"
+#~ "content/plugins/%s/api/cache'</code>.</div>"
+#~ msgstr ""
+#~ "<div class='updated fade'>Ihr Cache Verzeichnis kann nicht beschrieben "
+#~ "werden. Um das Caching zu aktivieren, müssen Sie Ihrem Webserver "
+#~ "erlauben, in das Verzeichnis <code>'wp-content/plugins/%s/api/cache'</"
+#~ "code> zu schreiben.</div>"
+
+#~ msgid "Enabled"
+#~ msgstr "Aktiviert"
+
+#~ msgid "Disabled"
+#~ msgstr "Deaktiviert"
+
+#~ msgid "Feed Preview"
+#~ msgstr "Photo-Feed Vorschau"
+
+#, fuzzy
+#~ msgid "Download"
+#~ msgstr "Download"
+
+#~ msgid "Select a tool for image presentation"
+#~ msgstr "Wählen Sie ein Tool für die Bild-Darstellung aus"
+
+#~ msgid "Gallery Tool"
+#~ msgstr "Galerie Tool"
+
+#~ msgid "crop"
+#~ msgstr "ja"
+
+#~ msgid "sharpen"
+#~ msgstr "ja"
+
+#~ msgid "show"
+#~ msgstr "anzeigen"
+
+#~ msgid "Sharpen image"
+#~ msgstr "Bild schärfen"
