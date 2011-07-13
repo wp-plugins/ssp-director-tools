@@ -1,16 +1,16 @@
 <?php
 
 class DirectorCache extends DirectorWrapper {
-
+	
 	function set($key, $expires = '+1 hour') {
 		$this->parent->cache_key = $key;
 		$this->parent->expires = $expires;
 	}
-
+	
 	function disable() {
 		$this->parent->cache = false;
 	}
-
+	
 	function get($tail = '') {
 		$filename = $this->parent->cache_path . $this->parent->cache_key . DIRECTORY_SEPARATOR . $tail;
 		if (file_exists($filename)) {
@@ -28,7 +28,7 @@ class DirectorCache extends DirectorWrapper {
 			return array();
 		}
 	}
-
+	
 	function fill($data, $tail) {
 		$filename = $this->parent->cache_path . $this->parent->cache_key . DIRECTORY_SEPARATOR . $tail;
 		if (!is_dir(dirname($filename))) {
