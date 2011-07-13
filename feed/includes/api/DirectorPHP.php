@@ -3,22 +3,22 @@
 /**
  * DirectorPHP API class
  * Version 1.5
- */
+*/
 
 class Director {
-
+	
 	# Fill in your API key here. It can be found on your Director preferences pane,
 	# under the "About your install" section.
 	public $api_key = '';
-
+	
 	# Path to your Director install
-	# This can also be found on your preferences pane, below the API key
+	# This can also be found on your preferences pane, below the API key		
 	public $path = '';
-
+	
 	##
 	# DO NOT EDIT BEYOND THIS POINT
 	##
-
+	
 	public $endpoint;
 	public $sizes = array();
 	public $debug = true;
@@ -34,32 +34,32 @@ class Director {
 	public $expires;
 	public $cache_invalidator;
 	public $user_scope = array();
-
+	
 	function __construct($api_key = '', $path = '', $debug = true) {
 		$this->debug = $debug;
 		if (!extension_loaded('curl')) {
 			$this->handle_error('The DirectorPHP class requires the cURL library.');
 		}
-
+		
 		if (!function_exists('json_decode')) {
 			$this->handle_error('The DirectorPHP class requires the PHP 5.2.x or higher or the php-json PECL library.');
 		}
-
+		
 		if (!empty($api_key)) {
 			$this->api_key = $api_key;
 		}
-
+		
 		if (!empty($path)) {
 			$this->path = $path;
 		}
-
+		
 		$this->api_key = trim($this->api_key);
 		$this->path = str_replace('http://', '', rtrim($this->path, '/'));
-
+		
 		if (empty($this->api_key) || empty($this->path)) {
 			$this->handle_error('You must specify an API key and install path.');
 		}
-
+		
 		if (preg_match('/^(local|hosted)\-(.*)/', $this->api_key, $matches)) {
 			if ($matches[1] == 'local') {
 				$this->is_local = true;
@@ -72,7 +72,7 @@ class Director {
 		$this->endpoint = 'http://' . $this->path;
 		if ($this->is_local) {
 			$this->endpoint .= '/index.php?';
-		}
+		} 
 		$this->endpoint .= '/api/';
 
 		$this->cache_path = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'cache' . DIRECTORY_SEPARATOR;
@@ -91,16 +91,16 @@ class Director {
 		$this->cache = new DirectorCache($this);
 		$this->user = new DirectorUser($this);
 	}
-
+	
 	/********************************************************
-
-	public functions
-
-	Only methods in this class or a subclass of
-	this class can call these methods.
-
+		
+		public functions
+		
+		Only methods in this class or a subclass of 
+		this class can call these methods.
+	
 	********************************************************/
-
+	
 	protected function format_sizes() {
 		if (!empty($this->sizes)) {
 			foreach($this->sizes as $key => $size) {
@@ -108,13 +108,13 @@ class Director {
 				$this->params[] = "size[$key]=" . join(',', $temp_arr);
 			}
 		}
-
+		
 		if (!empty($this->preview)) {
 			$temp_arr = array($this->preview['width'], $this->preview['height'], $this->preview['crop'], $this->preview['quality'], $this->preview['sharpening']);
 			$preview = join(',', $temp_arr);
 			$this->params[] = 'preview=' . $preview;
 		}
-
+		
 		if (!empty($this->user_sizes)) {
 			foreach($this->user_sizes as $key => $size) {
 				$temp_arr = array($size['name'], $size['width'], $size['height'], $size['crop'], $size['quality'], $size['sharpening']);
@@ -122,7 +122,7 @@ class Director {
 			}
 		}
 	}
-
+	
 	public function send($method, $options = array()) {
 		if ($this->dead) {
 			return array();
@@ -142,14 +142,14 @@ class Director {
 					}
 				}
 			}
-				
+			
 			$this->format_sizes();
-				
+			
 			$params_str = join('&', $this->params);
 			$this->params = array();
-				
+			
 			$tail = md5($params_str);
-				
+			
 			if ($this->cache && !empty($this->cache_key)) {
 				$cache = true;
 				$return = $this->cache->get($tail);
@@ -157,13 +157,13 @@ class Director {
 				$cache = false;
 				$return = array();
 			}
-				
+			
 			if (empty($return)) {
 				if ($cache) {
 					$params_str .= '&invalidator[path]=' . $this->cache_invalidator . '&invalidator[name]=' . $this->cache_key . '/' . $tail;
 				}
-				$ch = curl_init($this->endpoint . $method . '?' . $params_str);
-
+				$ch = curl_init($this->endpoint . $method . '?' . $params_str); 
+				
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 				$return = trim(curl_exec($ch));
 
@@ -178,7 +178,7 @@ class Director {
 				curl_close($ch);
 			}
 
-			$response = json_decode($return);
+			$response = json_decode($return);	
 
 			if (!empty($response->error)) {
 				$this->handle_error('DirectorAPI Error: ' . $response->error);
@@ -189,7 +189,7 @@ class Director {
 			return $response->data;
 		}
 	}
-
+	
 	function handle_error($msg) {
 		if ($this->debug) {
 			die($msg);
@@ -197,7 +197,7 @@ class Director {
 			$this->dead = true;
 		}
 	}
-
+	
 }
 
 class DirectorWrapper {
