@@ -6,7 +6,7 @@ class DirectorContent extends DirectorWrapper {
 		$response = $this->parent->send('get_content', $options);
 		return $response;
 	}
-	
+
 	public function all($options = array()) {
 		if (isset($options['scope']) && !empty($options['scope'])) {
 			$this->parent->params[] = 'scope=' . $options['scope'][0];

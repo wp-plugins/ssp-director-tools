@@ -43,7 +43,7 @@ function sspdt_model($val) {
 	}
 }
 
-//sanitize text 
+//sanitize text
 function sspdt_nohtml($val) {
 	return wp_kses($val, array());
 }

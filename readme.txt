@@ -2,8 +2,8 @@
 Contributors: parelius
 Tags: SlideShowPro, images, gallery, album, photos, fancybox, API, SSP, SSP Director, widget, shortcode
 Requires at least: 3.0
-Tested up to: 3.2
-Stable tag: 1.0
+Tested up to: 3.2.1
+Stable tag: 1.0.1
 
 SSP Director Tools give you means for integrating SlideShowPro Director content into a WordPress blog.
 
@@ -34,7 +34,7 @@ If you want to use the photo feed feature, follow these steps:
 
 * It is recommended to copy the `feed` directory to a directory outside of your WordPress installation.
 * You might consider to copy it to the server hosting your director installation, e.g. to `http://director.myserver.com/feed/`.
-* Then, enter the path to the `feed.php` into the SSP Director Toos Options page, e.g. `http://director.mysserver.com/feed/feed.php`.
+* Then, enter the path to the feed installation into the SSP Director Toos Options page, e.g. `http://director.mysserver.com/feed/`.
 * Define a secret for your photo feed installation, enter it into the SSP Director Tools Options page and set the `$sspdt_secret`variable in the `config.php`file to the same value.
 * Finally, set the `$sspd_api_key`and `$sspd_api_path` variables in the `config.php`file to the values for your SSP Director installation.
 
@@ -55,6 +55,10 @@ No. Currently this is not possible, but it is planned for a future version.
 3. Example output of a photo grid with RSS photo link
 
 == Changelog ==
+
+= 1.0.1 =
+* Fixed de_DE localization
+* Some maintenance fixes
 
 = 1.0 =
 * First public release
@@ -78,7 +82,7 @@ List of allowed attributes:
 * `tags: List of tags to filter the content by, separated by commas.
 * `tagmode`: Mode in which the tag filter works. Match all tags or any out of the list (all|one, default: one).
 * `sort_on`: The sort field (null|created_on|captured_on|modified_on|filename|random, default: null).
-* `sort_direction`: The sort order (ASC|DESC, default: ASC).
+* `sort_direction`: The sort order (ASC|DESC, default: DESC).
 * `rss`: Whether or not to show a RSS photo feed link below the photo grid (yes|1|no|0, default: 1).
 
 If no attributes are specified, the default plugin settings apply as defined in the sections "Photo Grid Defaults" and "Image Sizes an Handling".
@@ -91,3 +95,4 @@ Example:
 == Known Issues ==
 
 * A bug in the Director API v. 1.5.0 beta generates a wrong result when a query with multiple tags is done. See [SSP Director Forum](http://forums.slideshowpro.net/viewtopic.php?id=29339).
+* The plugin currently doesn't check if the photo feed feature is installed correctly.

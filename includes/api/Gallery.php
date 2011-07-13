@@ -6,7 +6,7 @@ class DirectorGallery extends DirectorWrapper {
 		$response = $this->parent->send('get_gallery', $options);
 		return $response;
 	}
-	
+
 	public function all($options = array()) {
 		$response = $this->parent->send('get_gallery_list', $options);
 		return $response->galleries;

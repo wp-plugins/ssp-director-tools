@@ -1,7 +1,7 @@
 <?php
 
 class DirectorUser extends DirectorWrapper {
-	
+
 	function scope($options = array()) {
 		$defaults = array('all' => false);
 		$options = array_merge($defaults, $options);
@@ -11,7 +11,7 @@ class DirectorUser extends DirectorWrapper {
 			$this->parent->user_scope = array($options['model'], $options['id'], $options['all']);
 		}
 	}
-	
+
 	function all($options = array()) {
 		if (!empty($this->parent->user_scope)) {
 			$options['user_scope_model'] = $this->parent->user_scope[0];

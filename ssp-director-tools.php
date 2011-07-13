@@ -1,26 +1,26 @@
 <?php
 /*
-Plugin Name: SSP Director Tools
-Description: SSP Director Tools help you to link content from a SlideShowPro Director installation to WordPress posts and pages. 
-Version: 1.0
-Text Domain: sspdt
-Author: Matthias Scheidl <matthias@scheidl.name>
-*/
+ Plugin Name: SSP Director Tools
+ Description: SSP Director Tools help you to link content from a SlideShowPro Director installation to WordPress posts and pages.
+ Version: 1.0.1
+ Text Domain: sspdt
+ Author: Matthias Scheidl <dev@scheidl.name>
+ */
 
-/*  Copyright 2010-2011  Matthias Scheidl  (email : matthias@scheidl.name)
+/*  Copyright 2010-2011  Matthias Scheidl  (email : dev@scheidl.name)
 
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License, version 2, as 
-    published by the Free Software Foundation.
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License, version 2, as
+published by the Free Software Foundation.
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
 
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
 global $sspdt_nonce;
@@ -63,8 +63,8 @@ add_action('wp_head', 'init_fancybox');
 function add_fancybox_scripts() {
 	if(!is_admin()) {
 		wp_deregister_script( 'jquery' );
-   		wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js');
-   		wp_enqueue_script( 'jquery' );
+		wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js');
+		wp_enqueue_script( 'jquery' );
 		wp_register_script('sspdt_fancybox_js', plugins_url('/js/fancybox/jquery.fancybox-1.3.4.pack.js', __FILE__));
 		wp_enqueue_script('sspdt_fancybox_js');
 		wp_register_script('sspdt_fancybox_easing_js', plugins_url('/js/fancybox/jquery.easing-1.3.pack.js', __FILE__));
@@ -79,14 +79,14 @@ function init_fancybox() {
 		echo '	var $j = jQuery.noConflict();';
 		echo '	$j(document).ready(function() {';
 		echo '		$j("a.fancybox").fancybox({"type" : "image"';
-		
+
 		if( isset( $fb['padding'] ) ) echo ', "padding" : ' . (int) $fb['padding'];
 		if( isset( $fb['margin'] ) ) echo ', "margin" : ' . (int) $fb['margin'];
 		echo ( $fb['titleShow'] === '1' ? ', "titleShow" : true' : ', "titleShow" : false');
 		if( isset( $fb['titlePosition'] ) && $fb['titlePosition'] != 'outside' ) echo ', "titlePosition" : "' . $fb['titlePosition'] . '"';
 		/*if( $fb['counterShow'] == '1' && $fb['titlePosition'] == 'inside')  echo ', "titleFormat" : function (title, currentArray, currentIndex, currentOpts) {
-    return "<div id=\'tip7-title\' style=\'text-align:left\'>" + (title && title.length ? + title + : "" ) + "Image " + (currentIndex + 1) + " of " + currentArray.length + "</div>";
-};';*/
+		 return "<div id=\'tip7-title\' style=\'text-align:left\'>" + (title && title.length ? + title + : "" ) + "Image " + (currentIndex + 1) + " of " + currentArray.length + "</div>";
+		 };';*/
 		echo ( $fb['overlayShow'] === '1' ? ', "overlayShow" : true' : ', "overlayShow" : false');
 		if( isset( $fb['overlayOpacity'] ) && $fb['overlayShow'] === '1') echo ', "overlayOpacity" : ' . (float) $fb['overlayOpacity'] ;
 		if( isset( $fb['overlayColor'] )  && $fb['overlayShow'] === '1') echo ', "overlayColor" : "' . $fb['overlayColor'] . '"';
@@ -94,7 +94,7 @@ function init_fancybox() {
 		echo ( $fb['showArrows'] === '1' ? ', "showArrows" : true' : ', "showArrows" : false');
 		echo ( $fb['showCloseButton'] === '1' ? ', "showCloseButton" : true' : ', "showCloseButton" : false');
 		echo ( $fb['enableEscapeButton'] === '1' ? ', "enableEscapeButton" : true' : ', "enableEscapeButton" : false');
-		
+
 		if( isset( $fb['transitionIn'] ) ) echo ', "transitionIn" : "' . $fb['transitionIn'] . '"';
 		if( isset( $fb['speedIn'] ) && $fb['transitionIn'] != 'none') echo ', "speedIn" : ' . (int) $fb['speedIn'];
 		if( isset( $fb['easingIn'] ) && $fb['transitionIn'] == 'easing' ) echo ', "easingIn" : "' . $fb['easingIn'] . '"';
@@ -102,7 +102,7 @@ function init_fancybox() {
 		if( isset( $fb['speedOut'] ) && $fb['transitionOut'] != 'none') echo ', "speedOut" : ' . (int) $fb['speedOut'];
 		if( isset( $fb['easingOut'] ) && $fb['transitionOut'] == 'easing' ) echo ', "easingOut" : "' . $fb['easingOut'] . '"';
 		if( isset( $fb['changeSpeed'] ) ) echo ', "changeSpeed" : ' . (int) $fb['changeSpeed'];
-		
+
 		echo '		});';
 		echo '	});';
 		echo '</script>';
@@ -151,8 +151,7 @@ require_once 'includes/shortcodes.php';
 require_once('includes/SSPDT_Widget.php');
 add_action( 'widgets_init', 'sspdt_register_widget' );
 function sspdt_register_widget() {
-    register_widget( 'SSPDT_Widget' );
+	register_widget( 'SSPDT_Widget' );
 }
-
 
 ?>
