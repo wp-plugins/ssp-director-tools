@@ -14,3 +14,11 @@ td.thcol {
 p.wp-caption-text {
 	margin-bottom: 0px !important;
 }
+
+.sspdt_info {
+    font-size:10px !important;
+    line-height:100%;
+    padding:0px 6px;
+	background-color: #FFFFE0;
+	border: 1px solid #E6DB55;
+}

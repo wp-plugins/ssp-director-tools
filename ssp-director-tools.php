@@ -2,7 +2,7 @@
 /*
  Plugin Name: SSP Director Tools
  Description: SSP Director Tools help you to link content from a SlideShowPro Director installation to WordPress posts and pages.
- Version: 1.0.1
+ Version: 1.0.2
  Text Domain: sspdt
  Author: Matthias Scheidl <dev@scheidl.name>
  */
@@ -78,15 +78,12 @@ function init_fancybox() {
 		echo '<script type="text/javascript">';
 		echo '	var $j = jQuery.noConflict();';
 		echo '	$j(document).ready(function() {';
-		echo '		$j("a.fancybox").fancybox({"type" : "image"';
+		echo '		$j("a.sspdt-fancybox").fancybox({"type" : "image"';
 
 		if( isset( $fb['padding'] ) ) echo ', "padding" : ' . (int) $fb['padding'];
 		if( isset( $fb['margin'] ) ) echo ', "margin" : ' . (int) $fb['margin'];
 		echo ( $fb['titleShow'] === '1' ? ', "titleShow" : true' : ', "titleShow" : false');
 		if( isset( $fb['titlePosition'] ) && $fb['titlePosition'] != 'outside' ) echo ', "titlePosition" : "' . $fb['titlePosition'] . '"';
-		/*if( $fb['counterShow'] == '1' && $fb['titlePosition'] == 'inside')  echo ', "titleFormat" : function (title, currentArray, currentIndex, currentOpts) {
-		 return "<div id=\'tip7-title\' style=\'text-align:left\'>" + (title && title.length ? + title + : "" ) + "Image " + (currentIndex + 1) + " of " + currentArray.length + "</div>";
-		 };';*/
 		echo ( $fb['overlayShow'] === '1' ? ', "overlayShow" : true' : ', "overlayShow" : false');
 		if( isset( $fb['overlayOpacity'] ) && $fb['overlayShow'] === '1') echo ', "overlayOpacity" : ' . (float) $fb['overlayOpacity'] ;
 		if( isset( $fb['overlayColor'] )  && $fb['overlayShow'] === '1') echo ', "overlayColor" : "' . $fb['overlayColor'] . '"';
@@ -102,6 +99,14 @@ function init_fancybox() {
 		if( isset( $fb['speedOut'] ) && $fb['transitionOut'] != 'none') echo ', "speedOut" : ' . (int) $fb['speedOut'];
 		if( isset( $fb['easingOut'] ) && $fb['transitionOut'] == 'easing' ) echo ', "easingOut" : "' . $fb['easingOut'] . '"';
 		if( isset( $fb['changeSpeed'] ) ) echo ', "changeSpeed" : ' . (int) $fb['changeSpeed'];
+		
+		echo ', "onStart" : function(currentArray,currentIndex,currentOpts){ 
+						if(currentOpts.titlePosition != "float") {
+                        var obj = currentArray[ currentIndex ]; 
+                        if ($j(obj).next().length) 
+                                this.title = $j(obj).next().html(); 
+                        }
+                } ';
 
 		echo '		});';
 		echo '	});';
@@ -153,5 +158,15 @@ add_action( 'widgets_init', 'sspdt_register_widget' );
 function sspdt_register_widget() {
 	register_widget( 'SSPDT_Widget' );
 }
+
+/**
+ * Plugin activation handler
+ */
+function sspdt_activation_handler() {
+	sspdt_default_options();
+}
+
+//Hooks
+register_activation_hook(__FILE__, 'sspdt_activation_handler');
 
 ?>

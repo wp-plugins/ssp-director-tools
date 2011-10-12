@@ -12,3 +12,4 @@ function model_on_change() {
 	var mymodel = this.document.getElementById("model").value;
 	this.document.getElementById("model_id").disabled = mymodel == "null";
 }
+

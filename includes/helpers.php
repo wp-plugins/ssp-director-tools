@@ -48,6 +48,23 @@ function sspdt_nohtml($val) {
 	return wp_kses($val, array());
 }
 
+//sanitize html formats
+function sspdt_html_format($val) {
+	$allowed = array(
+		"div" => array(
+			"style" => array(), 
+			"align" => array()
+		),
+		"p" =>	array("style" => array()),
+		"b" => array(),
+		"i" => array(),
+		"strong" => array(),
+		"em" => array(),
+		"br" =>array()
+	);
+	return wp_kses($val, $allowed);
+}
+
 //sanitize tagmode
 function sspdt_tagmode($val) {
 	$haystack = array("all", "one");

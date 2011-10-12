@@ -137,12 +137,18 @@ class SSPDT extends Director{
 		foreach( $contents as $content ) {
 			$width =  (int)$content->grid->width;
 			$height = (int)$content->grid->height;
+
 			$title = ($content->caption) ? $this->prep($content->caption) : $this->prep($content->iptc->caption);
+			//$title = $this->get_meta($content);
 			$alt = ($content->caption) ? $this->prep($content->caption) : $this->prep($content->iptc->caption);
 			$out .= sprintf ("<a class='%s' rel='%s' href='%s' title='%s'>
 	<img class='sspdt_grid' src='%s' alt='%s' width='%s' height='%s' type='image/jpeg'/>
-</a>\n", "fancybox", $rel, $content->large->url, $title, $content->grid->url, $alt, $width, $height);
-		}
+</a>\n", "sspdt-fancybox", $rel, $content->large->url, $title, $content->grid->url, $alt, $width, $height);
+			
+			$out .= $this->meta_html($content, "large");
+			
+			}
+		
 
 		$out .= ( "</div>\n" );
 		if($content_options['rss'] == '1' || $content_options == 'yes' && $content_options['sort_on'] != 'random') {
@@ -177,26 +183,79 @@ class SSPDT extends Director{
 
 		$rel = "post-" . $post_id;
 		$alt = $content->caption ? $this->prep($content->caption) : "";
+		
+		//debug_var($content->iptc);
 
 		if($showcaption) {
 			$caption = ($content->caption) ? $this->prep($content->caption) : $this->prep($content->iptc->caption);
+			$caption = $this->meta_html($content, "thumb");
 				
 			if($caption != "") {
-				return sprintf("<div id='sspdt-content-%s' class='wp-caption %s' style='width:%spx'>
+				$out = sprintf("<div id='sspdt-content-%s' class='wp-caption %s' style='width:%spx'>
 					<a class='%s' href='%s' rel='%s' title='%s'>
 						<img src='%s' alt='%s' width='%s' height='%s' />
 					</a>
+					%s
 					<p class='wp-caption-text'>%s</p>
 				</div>", 
-				$image, $align, $captionwidth, "fancybox", $large, $rel, $title, $thumb, $alt, $width, $height, $caption);
+				$image, $align, $captionwidth, "fancybox", $large, $rel, $title, $thumb, $alt, $width, $height, $this->meta_html($content, "large"), $caption);
+
+				return $out;
 			}
 		}
 
-		return sprintf("<a class='%s sspdt_thumb' href='%s' rel='%s' title='%s'>
+		$out = sprintf("<a class='%s sspdt_thumb' href='%s' rel='%s' title='%s'>
 			<img class='%s' src='%s' alt='%s' width='%s' height='%s' />
 		</a>", 
 		"fancybox", $large, $rel, $title, $align, $thumb, $alt, $width, $height);
-
+		
+		$out .= $this->meta_html($content, "large");
+		
+		return $out;
+	}
+	
+	
+	/**
+	 * Formats content metadata
+	 * @param array content object with content metadata
+	 * @param string size content size (thumb|large)
+	 * @return string The formatted html output
+	 */
+	private function meta_html($content, $size) {
+		
+		if($size == "large") {
+			$format = htmlspecialchars_decode( $this->format_options['large_caption_format'] );
+		} elseif ($size == "thumb") {
+			$format = htmlspecialchars_decode( $this->format_options['thumb_caption_format'] );
+		} else {
+			return "";
+		}
+		
+		$date_format = $this->format_options['date_format'];
+				
+		$caption = ($content->caption) ? $this->prep($content->caption) : $this->prep($content->iptc->caption);
+		$byline = $this->prep($content->iptc->byline);
+		$date = date($date_format, $content->captured_on);
+		$city = $this->prep($content->iptc->city);
+		$country = $this->prep($content->iptc->country);
+		$latitude =  $content->exif->latitude;
+		$longitude =  $content->exif->longitude;
+		
+		$search = array("%caption%", "%byline%", "%date%", "%city%", "%country%");
+		$replace = array($caption, $byline, $date, $city, $country);
+		
+		$html = "";
+		if($size == "large") {
+			$html .= "<div style='display:none;'>";
+			$html .= str_replace($search, $replace, $format);
+			$html .= "</div>";
+		} elseif ($size == "thumb") {
+			$html .= str_replace($search, $replace, $format);
+		}
+		
+		
+		
+		return $html;
 	}
 
 	/**

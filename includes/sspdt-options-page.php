@@ -59,12 +59,16 @@ function sspdt_options_page() {
 		$format_options['thumb_sharpen'] = sspdt_bool( $_POST['thumb_sharpen'] );
 		$format_options['thumb_align'] = sspdt_align( $_POST['thumb_align'] );
 		$format_options['thumb_caption'] = sspdt_bool( $_POST['thumb_caption'] );
+		$format_options['thumb_caption_format'] = htmlspecialchars( sspdt_html_format( $_POST['thumb_caption_format'] ), ENT_COMPAT, "UTF-8", false );
 
 		$format_options['large_width'] = sspdt_posint( $_POST['large_width'] );
 		$format_options['large_height'] = sspdt_posint( $_POST['large_height'] );
 		$format_options['large_crop'] = sspdt_bool( $_POST['large_crop'] );
 		$format_options['large_quality'] = sspdt_posint( $_POST['large_quality'] );
 		$format_options['large_sharpen'] = sspdt_bool( $_POST['large_sharpen'] );
+		$format_options['large_caption_format'] = htmlspecialchars( sspdt_html_format( $_POST['large_caption_format'] ), ENT_COMPAT, "UTF-8", false );
+		
+		$format_options['date_format'] = sspdt_nohtml( $_POST['date_format'] );
 
 		$defaults = array();
 
@@ -126,74 +130,7 @@ function sspdt_options_page() {
 </div>
 		<?php	
 	}
-	
 
-
-	if(get_option('sspdt_format_options') == null) {
-
-		$format_options['grid_width'] = '60';
-		$format_options['grid_height'] = '60';
-		$format_options['grid_crop'] = '1';
-		$format_options['grid_quality'] = '75';
-		$format_options['grid_sharpen'] = '1';
-			
-		$format_options['thumb_width'] = '240';
-		$format_options['thumb_height'] = '240';
-		$format_options['thumb_crop'] = '0';
-		$format_options['thumb_quality'] = '80';
-		$format_options['thumb_sharpen'] = '1';
-		$format_options['thumb_align'] = 'alignleft';
-		$format_options['thumb_caption'] = '1';
-			
-		$format_options['large_width'] = '1000';
-		$format_options['large_height'] = '720';
-		$format_options['large_crop'] = '0';
-		$format_options['large_quality'] = '85';
-		$format_options['large_sharpen'] = '1';
-			
-		update_option( 'sspdt_format_options', $format_options );
-	}
-
-	if(get_option('sspdt_defaults') == null) {
-		$defaults['model'] = 'gallery';
-		$defaults['model_id'] = '1';
-		$defaults['limit'] = '12';
-		$defaults['tags'] = '';
-		$defaults['tagmode'] = 'one';
-		$defaults['sort_on'] = 'captured_on';
-		$defaults['sort_direction'] = 'DESC';
-		$defaults['rss'] = '0';
-			
-		update_option( 'sspdt_defaults', $defaults );
-	}
-
-	if(get_option('sspdt_fancybox') == null) {
-		$fb['padding'] = '10';
-		$fb['margin'] = '20';
-			
-		$fb['titleShow'] = '1';
-		$fb['titlePosition'] = 'outside';
-		$fb['counterShow'] = '0';
-			
-		$fb['overlayShow'] = '1';
-		$fb['overlayOpacity'] = '0.3';
-		$fb['overlayColor'] = '#666';
-			
-		$fb['cyclic'] = '0';
-		$fb['showNavArrows'] = '1';
-		$fb['showCloseButton'] = '1';
-		$fb['enableEscapeButton'] = '1';
-			
-		$fb['transitionIn'] = '1';
-		$fb['speedIn'] = '300';
-		$fb['easingIn'] = 'linear';
-		$fb['transitionOut'] = '1';
-		$fb['speedOut'] = '400';
-		$fb['easingOut'] = 'linear';
-		$fb['changeSpeed'] = '400';
-			
-		update_option( 'sspdt_fancybox', $fb );
-	}
 
 	$format_options = get_option('sspdt_format_options');
 	$defaults = get_option('sspdt_defaults');
@@ -246,6 +183,28 @@ function model_on_change() {
 	var mymodel = this.document.getElementById("model").value;
 	this.document.getElementById("model_id").disabled = mymodel == "null";
 }
+
+var $j = jQuery.noConflict()
+
+function showhide(what) {
+	var $j = jQuery.noConflict()
+    if (document.getElementById(what).style.display == 'none') {
+   $j('#' + what).slideDown(600);
+    } else {
+   $j('#' + what).hide(200);
+    }
+}
+
+
+$j(document).ready(function() {
+	  if (window.location.hash) {
+	    var h = String(window.location.hash.substring(1));
+	    if ($j(h)) {
+	      showhide(h);
+	    }
+	  }
+	});
+
 //-->
 </script>
 
@@ -354,7 +313,6 @@ function model_on_change() {
 						<th class="manage-column"><?php _e('Cropping', 'sspdt'); ?></th>
 						<th class="manage-column"><?php _e('Sharpening', 'sspdt'); ?></th>
 						<th class="manage-column"><?php _e('Alignment', 'sspdt'); ?></th>
-						<th class="manage-column"><?php _e('Caption', 'sspdt'); ?></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -381,7 +339,6 @@ function model_on_change() {
 							value="1"
 							<?php if ( $format_options['grid_sharpen'] == '1') { echo "checked = 'checked'";}  ?> />
 						</td>
-						<td></td>
 						<td></td>
 					</tr>
 					<tr valign="middle">
@@ -426,10 +383,6 @@ function model_on_change() {
 								</option>
 						</select>
 						</td>
-						<td><input id="thumb_caption" name="thumb_caption" type="checkbox"
-							value="1"
-							<?php if ( $format_options['thumb_caption'] == '1') { echo "checked = 'checked'";}  ?> />
-						</td>
 					</tr>
 					<tr valign="middle">
 						<th scope="row"><img class="sspdt_handling_icon"
@@ -455,10 +408,6 @@ function model_on_change() {
 							<?php if ( $format_options['large_sharpen'] == '1') { echo "checked = 'checked'";}  ?> />
 						</td>
 						<td></td>
-						<td><input id="titleShow" name="titleShow" type="checkbox"
-							value="1"
-							<?php if ( $fb['titleShow'] == '1') { echo "checked = 'checked'";}  ?> />
-						</td>
 					</tr>
 
 				</tbody>
@@ -471,9 +420,78 @@ function model_on_change() {
 						<th>&nbsp;</th>
 						<th>&nbsp;</th>
 						<th>&nbsp;</th>
-						<th>&nbsp;</th>
 					</tr>
 				</tfoot>
+			</table>
+			
+			<h3>
+			<?php _e('Captions', 'sspdt'); ?>
+			</h3>
+			<p>
+				<i><?php _e('Define display and formatting of captions based on content metadata.', 'sspdt'); ?>
+				</i>
+			</p>
+			<table class="form-table">
+				<tr valign="middle">
+					<th scope="row"><label for="preview_caption"><?php _e('Preview Captions', 'sspdt'); ?></label></th>
+					<td>
+						<input id="thumb_caption" name="thumb_caption" type="checkbox" style="margin-right:20px;"
+							value="1"
+							<?php if ( $format_options['thumb_caption'] == '1') { echo "checked = 'checked'";}  ?> /> Format  (<a href="javascript:showhide('caption_formatting_help');"><?php _e('Help', 'sspdt'); ?></a>)
+						<input id="thumb_caption_format" name="thumb_caption_format" type="text" size="80" value="<?php echo $format_options['thumb_caption_format'];?>"></input>
+					</td>
+				</tr>
+				<tr valign="middle">
+					<th scope="row"><label for="large_caption"><?php _e('Presentation Captions', 'sspdt'); ?></label></th>
+					<td><p>
+						<input id="titleShow" name="titleShow" type="checkbox" style="margin-right:20px;"
+							value="1"
+							<?php if ( $fb['titleShow'] == '1') { echo "checked = 'checked'";}  ?> /> Format (<a href="javascript:showhide('caption_formatting_help');"><?php _e('Help', 'sspdt'); ?></a>)
+						<input id="large_caption_format" name="large_caption_format" type="text" size="80" value="<?php echo $format_options['large_caption_format'];?>"></input>
+						</p>
+						<p>
+							<?php _e('Position:', 'sspdt'); ?> <select id="titlePosition"
+						name="titlePosition">
+							<option value="outside"
+							<?php if($fb['titlePosition'] == 'outside') {echo "selected";} ?>>
+								<?php _e('outside frame', 'sspdt'); ?>
+							</option>
+							<option value="inside"
+							<?php if($fb['titlePosition'] == 'inside') {echo "selected";} ?>>
+								<?php _e('inside frame', 'sspdt'); ?>
+							</option>
+							<option value="over"
+							<?php if($fb['titlePosition'] == 'over') {echo "selected";} ?>>
+								<?php _e('over image', 'sspdt'); ?>
+							</option>
+					</select>
+						</p>
+					</td>
+				</tr>
+				<tr valign="middle" id="caption_formatting_help" style="display: none;">
+					<th scope="row"></th>
+					<td class="sspdt_info">
+							<h4><?php _e('Placeholders', 'sspdt'); ?></h4>
+							<p><?php _e('The following placeholders for SSP Director metadata are allowed in captions:', 'sspdt'); ?></p>
+							<ul>
+								<li><strong>%caption% </strong> <?php _e('The image caption. If not set, the IPTC caption is used', 'sspdt'); ?></li>
+								<li><strong>%byline% </strong> <?php _e('The IPTC byline', 'sspdt'); ?></li>
+								<li><strong>%date% </strong> <?php _e('The image capture date from the EXIF record', 'sspdt'); ?></li>
+								<li><strong>%city% </strong> <?php _e('The IPTC city', 'sspdt'); ?></li>
+								<li><strong>%country% </strong> <?php _e('The IPTC country', 'sspdt'); ?></li>
+							</ul>
+							<h4><?php _e('HTML Tags', 'sspdt'); ?></h4>
+							<p><?php _e('The following HTML tags are allowed in captions:', 'sspdt'); ?></p>
+							<p><pre>&lt;div style=""&gt;, &lt;p style=""&gt;, &lt;b&gt;, &lt;i&gt; &lt;strong&gt;, &lt;em&gt;, &lt;br&gt;</pre></p>
+					</td>
+				</tr>
+				<tr valign="middle">
+					<th scope="row"><label for="date_format"><?php _e('Date Format', 'sspdt'); ?></label></th>
+					<td>
+						<input id="date_format" name="date_format" type="text" size="8" value="<?php echo $format_options['date_format'];?>"></input><br/>
+						<i><?php printf( __('Use PHP date formats. <a href="%s" target="_blank">Help</a>'), 'http://www.php.net/manual/en/function.date.php' ); ?></i>
+					</td>
+				</tr>
 			</table>
 
 			<h3>
@@ -608,27 +626,7 @@ function model_on_change() {
 						<input id="margin" name="margin" type="text" size="2"
 						value="<?php echo $fb['margin']; ?>" />px</td>
 				</tr>
-				<tr valign="middle">
-					<th scope="row"><label for="fb_title"><?php _e('Caption', 'sspdt'); ?>
-					</label>
-					</th>
-					<td><?php _e('Position:', 'sspdt'); ?> <select id="titlePosition"
-						name="titlePosition">
-							<option value="outside"
-							<?php if($fb['titlePosition'] == 'outside') {echo "selected";} ?>>
-								<?php _e('outside frame', 'sspdt'); ?>
-							</option>
-							<option value="inside"
-							<?php if($fb['titlePosition'] == 'inside') {echo "selected";} ?>>
-								<?php _e('inside frame', 'sspdt'); ?>
-							</option>
-							<option value="over"
-							<?php if($fb['titlePosition'] == 'over') {echo "selected";} ?>>
-								<?php _e('over image', 'sspdt'); ?>
-							</option>
-					</select>
-					</td>
-				</tr>
+				
 				<tr valign="middle">
 					<th><label for="fb_overlay"><?php _e('Overlay', 'sspdt'); ?> </label>
 					</th>
@@ -782,5 +780,84 @@ function model_on_change() {
 
 </div>
 <?php
+}
+
+/**
+ * Add default options to the db on plugin activation. Don't overwrite existing options.
+ */
+function sspdt_default_options() {
+	
+	$options = get_option('sspdt_format_options');
+	$tmp = $options;
+	
+	if( !isset( $options['grid_width'] ) ) $tmp['grid_width'] = '60';
+	if( !isset( $options['grid_height'] ) ) $tmp['grid_height'] = '60';
+	if( !isset( $options['grid_crop'] ) ) $tmp['grid_crop'] = '1';
+	if( !isset( $options['grid_quality'] ) ) $tmp['grid_quality'] = '75';
+	if( !isset( $options['grid_sharpen'] ) ) $tmp['grid_sharpen'] = '1';
+	
+	if( !isset( $options['thumb_width'] ) ) $tmp['thumb_width'] = '240';
+	if( !isset( $options['thumb_height'] ) ) $tmp['thumb_height'] = '240';
+	if( !isset( $options['thumb_crop'] ) ) $tmp['thumb_crop'] = '0';
+	if( !isset( $options['thumb_quality'] ) ) $tmp['thumb_quality'] = '80';
+	if( !isset( $options['thumb_sharpen'] ) ) $tmp['thumb_sharpen'] = '1';
+	if( !isset( $options['thumb_align'] ) ) $tmp['thumb_align'] = 'alignleft';
+	if( !isset( $options['thumb_caption'] ) ) $tmp['thumb_caption'] = '1';
+	if( !isset( $options['thumb_caption_format'] ) ) $tmp['thumb_caption_format'] = '%caption%';
+	
+	if( !isset( $options['large_width'] ) ) $tmp['large_width'] = '1000';
+	if( !isset( $options['large_height'] ) ) $tmp['large_height'] = '720';
+	if( !isset( $options['large_crop'] ) ) $tmp['large_crop'] = '0';
+	if( !isset( $options['large_quality'] ) ) $tmp['large_quality'] = '85';
+	if( !isset( $options['large_sharpen'] ) ) $tmp['large_sharpen'] = '1';
+	if( !isset( $options['large_caption_format'] ) ) $tmp['large_caption_format'] = '<div style=&quot;text-align:left&quot;><b>%caption%</b><br />%byline% (%date% in %city%, %country%)</div>';
+	
+	if( !isset( $options['date_format'] ) ) $tmp['date_format'] = 'd.m.Y';
+
+	update_option( 'sspdt_format_options', $tmp );
+	
+	$options = get_option('sspdt_defaults');
+	$tmp = $options;
+	
+	if( !isset( $options['model'] ) ) $tmp['model'] = 'gallery';
+	if( !isset( $options['model_id'] ) ) $tmp['model_id'] = '1';
+	if( !isset( $options['limit'] ) ) $tmp['limit'] = '0';
+	if( !isset( $options['tags'] ) ) $tmp['tags'] = '';
+	if( !isset( $options['tagmode'] ) ) $tmp['tagmode'] = 'one';
+	
+	if( !isset( $options['sort_on'] ) ) $tmp['sort_on'] = 'captured_on';
+	if( !isset( $options['sort_direction'] ) ) $tmp['sort_direction'] = 'DESC';
+	if( !isset( $options['rss'] ) ) $tmp['rss'] = '0';
+
+	update_option( 'sspdt_defaults', $tmp );
+	
+	$options = get_option('sspdt_fancybox');
+	$tmp = $options;
+	
+	if( !isset( $options['padding'] ) ) $tmp['padding'] = '10';
+	if( !isset( $options['margin'] ) ) $tmp['margin'] = '20';
+	
+	if( !isset( $options['titleShow'] ) ) $tmp['titleShow'] = '1';
+	if( !isset( $options['titlePosition'] ) ) $tmp['titlePosition'] = 'outside';
+	if( !isset( $options['counterShow'] ) ) $tmp['counterShow'] = '0';
+	
+	if( !isset( $options['overlayShow'] ) ) $tmp['overlayShow'] = '1';
+	if( !isset( $options['overlayOpacity'] ) ) $tmp['overlayOpacity'] = '0.3';
+	if( !isset( $options['overlayColor'] ) ) $tmp['overlayColor'] = '#666';
+	
+	if( !isset( $options['cyclic'] ) ) $tmp['cyclic'] = '0';
+	if( !isset( $options['showNavArrows'] ) ) $tmp['showNavArrows'] = '1';
+	if( !isset( $options['showCloseButton'] ) ) $tmp['showCloseButton'] = '1';
+	if( !isset( $options['enableEscapeButton'] ) ) $tmp['enableEscapeButton'] = '1';
+	
+	if( !isset( $options['transitionIn'] ) ) $tmp['transitionIn'] = '1';
+	if( !isset( $options['speedIn'] ) ) $tmp['speedIn'] = '300';
+	if( !isset( $options['easingIn'] ) ) $tmp['easingIn'] = 'linear';
+	if( !isset( $options['transitionOut'] ) ) $tmp['transitionOut'] = '1';
+	if( !isset( $options['speedOut'] ) ) $tmp['speedOut'] = '400';
+	if( !isset( $options['easingOut'] ) ) $tmp['easingOut'] = 'linear';
+	if( !isset( $options['changeSpeed'] ) ) $tmp['changeSpeed'] = '400';
+
+	update_option( 'sspdt_fancybox', $tmp );
 }
 ?>
