@@ -75,6 +75,9 @@ Edit the parameters of the `$sspd_feed_full` variable as desired. The variable `
 
 == Changelog ==
 
+= 1.1.1 =
+* Changed default settings for number of images to show in photo grids (24) and caption position (over)
+
 = 1.1 =
 * Configurable captions using a subset of IPTC and EXIF tags
 * Some minor fixes (including this Readme)

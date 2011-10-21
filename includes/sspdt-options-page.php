@@ -821,7 +821,7 @@ function sspdt_default_options() {
 	
 	if( !isset( $options['model'] ) ) $tmp['model'] = 'gallery';
 	if( !isset( $options['model_id'] ) ) $tmp['model_id'] = '1';
-	if( !isset( $options['limit'] ) ) $tmp['limit'] = '0';
+	if( !isset( $options['limit'] ) ) $tmp['limit'] = '24';
 	if( !isset( $options['tags'] ) ) $tmp['tags'] = '';
 	if( !isset( $options['tagmode'] ) ) $tmp['tagmode'] = 'one';
 	
@@ -838,7 +838,7 @@ function sspdt_default_options() {
 	if( !isset( $options['margin'] ) ) $tmp['margin'] = '20';
 	
 	if( !isset( $options['titleShow'] ) ) $tmp['titleShow'] = '1';
-	if( !isset( $options['titlePosition'] ) ) $tmp['titlePosition'] = 'outside';
+	if( !isset( $options['titlePosition'] ) ) $tmp['titlePosition'] = 'over';
 	if( !isset( $options['counterShow'] ) ) $tmp['counterShow'] = '0';
 	
 	if( !isset( $options['overlayShow'] ) ) $tmp['overlayShow'] = '1';
