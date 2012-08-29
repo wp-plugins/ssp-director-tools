@@ -2,8 +2,8 @@
 Contributors: parelius
 Tags: SlideShowPro, images, gallery, album, photos, fancybox, API, SSP, SSP Director, widget, shortcode, photo feed, RSS, feed
 Requires at least: 3.0
-Tested up to: 3.3
-Stable tag: 1.1
+Tested up to: 3.4.1
+Stable tag: 1.1.1
 
 SSP Director Tools give you means for integrating SlideShowPro Director content into a WordPress blog.
 
@@ -77,13 +77,14 @@ Edit the parameters of the `$sspd_feed_full` variable as desired. The variable `
 
 = 1.1.1 =
 * Changed default settings for number of images to show in photo grids (24) and caption position (over)
+* Updated de_DE localisation
 
 = 1.1 =
 * Configurable captions using a subset of IPTC and EXIF tags
 * Some minor fixes (including this Readme)
 
 = 1.0.1 =
-* Fixed de_DE localization
+* Fixed de_DE localisation
 * Some maintenance fixes
 
 = 1.0 =
