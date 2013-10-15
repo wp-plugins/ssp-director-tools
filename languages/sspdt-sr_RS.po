@@ -1,0 +1,599 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: SSP Director Tools\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-08-29 23:01+0100\n"
+"PO-Revision-Date: 2013-10-15 12:50+0100\n"
+"Last-Translator: Matthias Scheidl <dev@scheidl.name>\n"
+"Language-Team: Matthias Scheidl <dev@scheidl.name>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Language: de_DE\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../includes/sspdt-options-page.php:8
+msgid "Cheatin&#8217; uh?"
+msgstr "Varate&#8217;  jel?"
+
+#: ../includes/sspdt-options-page.php:22
+msgid "Settings have been saved."
+msgstr "Postavke su sačuvane"
+
+#: ../includes/sspdt-options-page.php:38
+msgid "API Settings seem wrong. Please double check them."
+msgstr "API Postavke su loše. Molim vas prgledajte ih ponovo."
+
+#: ../includes/sspdt-options-page.php:127
+msgid "You must define the API settings. Otherwise this plugin won't work."
+msgstr "Morate definisati API podešavanja. Inače ovaj plugin neće raditi."
+
+#: ../includes/sspdt-options-page.php:149
+msgid "Your PHP version is too old."
+msgstr "Vaša PHP verzija je zastarela. "
+
+#: ../includes/sspdt-options-page.php:152
+msgid "The DirectorPHP API needs at least PHP 5. Please install it or get in touch with your internet provider or system administrator"
+msgstr "DirectorPHP API zahteva minimum PHP 5. Molim vas instalirajte ili kontaktirajte vaš internet provajder ili administratora sistema."
+
+#: ../includes/sspdt-options-page.php:161
+msgid "php_curl is not installed."
+msgstr "php_curl nije instaliran."
+
+#: ../includes/sspdt-options-page.php:164
+msgid "SSP Director Tools need php_curl be installed to work properly."
+msgstr "SSP Director Tools zahteva da bude php_curl instalirano da bi radilo ispravno.  "
+
+#: ../includes/sspdt-options-page.php:214
+msgid "SlideShowPro Director Tools"
+msgstr "SlideShowPro Director Tools"
+
+#: ../includes/sspdt-options-page.php:222
+msgid "API Settings"
+msgstr "API postavke"
+
+#: ../includes/sspdt-options-page.php:225
+msgid "The settings can be found on the \"System Info\" page of your SlideShowPro Director installation."
+msgstr "Postavke mogu biti pronadjene na \"System Info\" stranici vaše SlideShowPro Director instaacije"
+
+#: ../includes/sspdt-options-page.php:231
+msgid "API Key"
+msgstr "API ključ"
+
+#: ../includes/sspdt-options-page.php:239
+msgid "API Path"
+msgstr "API putanja"
+
+#: ../includes/sspdt-options-page.php:252
+msgid "Caching disabled"
+msgstr "Caching onemogućen"
+
+#: ../includes/sspdt-options-page.php:254
+#, php-format
+msgid "Your cache directory %s is not writable."
+msgstr "Vaš cache direktorijum %s se ne može pisti."
+
+#: ../includes/sspdt-options-page.php:256
+msgid "You must allow your web server to write to it in order to enable caching."
+msgstr "Morate dozvoliti vašem web serveru da piše na njemu da biste omogućili caching."
+
+#: ../includes/sspdt-options-page.php:262
+msgid "API Cache"
+msgstr "API Cache"
+
+#: ../includes/sspdt-options-page.php:270
+msgid "API Cache activated"
+msgstr "API Cache aktiviran"
+
+#: ../includes/sspdt-options-page.php:271
+msgid "The API cache can improve performance dramatically."
+msgstr "API Cache vam može dramatično poboljšati performanse."
+
+#: ../includes/sspdt-options-page.php:278
+msgid "Photo Feed Options"
+msgstr "Photo Feed Opcije"
+
+#: ../includes/sspdt-options-page.php:281
+msgid "Needed, if you want to use the photo feed functionality."
+msgstr "Potrebno je ako hoćete da iskoristite photo feed funkcionalnost."
+
+#: ../includes/sspdt-options-page.php:286
+msgid "Photo Feed URL"
+msgstr "Photo Feed URL"
+
+#: ../includes/sspdt-options-page.php:289
+msgid "Path to the photo feed installation with tailing slash."
+msgstr "Putanja za photo feed instalaciju sa tailing slash-om."
+
+#: ../includes/sspdt-options-page.php:292
+msgid "Secret"
+msgstr "Tajna"
+
+#: ../includes/sspdt-options-page.php:295
+msgid "Enter the same secret as in the config.php file of your photo feed installation."
+msgstr "Unesite istu tajnu kao u config.php fajlu vaše photo feed instalacije."
+
+#: ../includes/sspdt-options-page.php:300
+msgid "Image Sizes an Handling"
+msgstr "Veličina slike je  Handling"
+
+#: ../includes/sspdt-options-page.php:303
+msgid "Define image sizes, quality and cropping."
+msgstr "Definišite veličinu slika, kvalitet i kropovanje."
+
+#: ../includes/sspdt-options-page.php:310
+msgid "Width"
+msgstr "Širina"
+
+#: ../includes/sspdt-options-page.php:311
+msgid "Height"
+msgstr "Visina"
+
+#: ../includes/sspdt-options-page.php:312
+msgid "Quality"
+msgstr "Kvalitet"
+
+#: ../includes/sspdt-options-page.php:313
+msgid "Cropping"
+msgstr "Kropovanje"
+
+#: ../includes/sspdt-options-page.php:314
+msgid "Sharpening"
+msgstr "Deljenje"
+
+#: ../includes/sspdt-options-page.php:315
+msgid "Alignment"
+msgstr "Poravnavanje"
+
+#: ../includes/sspdt-options-page.php:322
+msgid "Grid"
+msgstr "Grid"
+
+#: ../includes/sspdt-options-page.php:347
+msgid "Thumbnail"
+msgstr "Thumbnail"
+
+#: ../includes/sspdt-options-page.php:370
+#: ../includes/sspdt-options-page.php:704
+#: ../includes/sspdt-options-page.php:734
+msgid "none"
+msgstr "ništa"
+
+#: ../includes/sspdt-options-page.php:374
+msgid "left"
+msgstr "levo"
+
+#: ../includes/sspdt-options-page.php:378
+msgid "center"
+msgstr "centar"
+
+#: ../includes/sspdt-options-page.php:382
+msgid "right"
+msgstr "desno"
+
+#: ../includes/sspdt-options-page.php:390
+msgid "Image"
+msgstr "Slika"
+
+#: ../includes/sspdt-options-page.php:428
+msgid "Captions"
+msgstr "Captions"
+
+#: ../includes/sspdt-options-page.php:431
+msgid "Define display and formatting of captions based on content metadata."
+msgstr "Definišite prikaz i formatiranje captions-a zasnovanih na sadržaju metadata."
+
+#: ../includes/sspdt-options-page.php:436
+msgid "Preview Captions"
+msgstr "Prethodni Captions"
+
+#: ../includes/sspdt-options-page.php:440
+#: ../includes/sspdt-options-page.php:449
+msgid "Help"
+msgstr "Pomoć"
+
+#: ../includes/sspdt-options-page.php:445
+msgid "Presentation Captions"
+msgstr "Captions prezentacije"
+
+#: ../includes/sspdt-options-page.php:453
+msgid "Position:"
+msgstr "Pozicija"
+
+#: ../includes/sspdt-options-page.php:457
+msgid "outside frame"
+msgstr "van okvira"
+
+#: ../includes/sspdt-options-page.php:461
+msgid "inside frame"
+msgstr "unutar okvira"
+
+#: ../includes/sspdt-options-page.php:465
+msgid "over image"
+msgstr "preko slike"
+
+#: ../includes/sspdt-options-page.php:474
+msgid "Placeholders"
+msgstr "Placeholders"
+
+#: ../includes/sspdt-options-page.php:475
+msgid "The following placeholders for SSP Director metadata are allowed in captions:"
+msgstr "Sledeći placeholders-i za SSP Director metadata su dozvoljeni u  captions-ima:"
+
+#: ../includes/sspdt-options-page.php:477
+msgid "The image caption. If not set, the IPTC caption is used"
+msgstr "Caption slike. Ako nije podešen, IPTC caption je korišćen"
+
+#: ../includes/sspdt-options-page.php:478
+msgid "The IPTC byline"
+msgstr "IPTC byline"
+
+#: ../includes/sspdt-options-page.php:479
+msgid "The image capture date from the EXIF record"
+msgstr "Capture slike je od  EXIF record-a"
+
+#: ../includes/sspdt-options-page.php:480
+msgid "The IPTC city"
+msgstr " IPTC grad"
+
+#: ../includes/sspdt-options-page.php:481
+msgid "The IPTC country"
+msgstr " IPTC zemlja"
+
+#: ../includes/sspdt-options-page.php:483
+msgid "HTML Tags"
+msgstr "HTML Tagovi"
+
+#: ../includes/sspdt-options-page.php:484
+msgid "The following HTML tags are allowed in captions:"
+msgstr "Sledeći HTML tagovi su dozvoljeni:"
+
+#: ../includes/sspdt-options-page.php:489
+msgid "Date Format"
+msgstr "Format datuma"
+
+#: ../includes/sspdt-options-page.php:492
+#, php-format
+msgid "Use PHP date formats. <a href=\"%s\" target=\"_blank\">Help</a>"
+msgstr "Koristite PHP format datuma. <a href=\"%s\" target=\"_blank\">Pomoć</a>"
+
+#: ../includes/sspdt-options-page.php:498
+msgid "Photo Grid Defaults"
+msgstr "Photo Grid Defaults"
+
+#: ../includes/sspdt-options-page.php:501
+msgid "Default settings for SSP Director Photo Grids."
+msgstr "Default postavke za SSP Director Photo Grids."
+
+#: ../includes/sspdt-options-page.php:502
+msgid "These settings can be overridden by the photo grid shortcode [sspd] attributes."
+msgstr "Ove postavke mogu biti prepisane od strane photo grid shortcode [sspd] atributa."
+
+#: ../includes/sspdt-options-page.php:507
+#: ../includes/SSPDT_Widget.php:75
+msgid "Scope"
+msgstr "Scope"
+
+#: ../includes/sspdt-options-page.php:513
+#: ../includes/sspdt-options-page.php:564
+#: ../includes/SSPDT_Widget.php:80
+#: ../includes/SSPDT_Widget.php:119
+msgid "-- Not specified --"
+msgstr "-- Nije odredjeno --"
+
+#: ../includes/sspdt-options-page.php:517
+#: ../includes/SSPDT_Widget.php:84
+msgid "Gallery"
+msgstr "Galerija"
+
+#: ../includes/sspdt-options-page.php:521
+#: ../includes/SSPDT_Widget.php:88
+msgid "Album"
+msgstr "Album"
+
+#: ../includes/sspdt-options-page.php:529
+msgid "Limit"
+msgstr "Limit"
+
+#: ../includes/sspdt-options-page.php:532
+msgid "Leave blank if no limit should be specified."
+msgstr "Ostavite prazno ako je bez limita"
+
+#: ../includes/sspdt-options-page.php:537
+#: ../includes/SSPDT_Widget.php:98
+msgid "Tags"
+msgstr "Tagovi"
+
+#: ../includes/sspdt-options-page.php:546
+#: ../includes/SSPDT_Widget.php:104
+msgid "all"
+msgstr "sve"
+
+#: ../includes/sspdt-options-page.php:550
+#: ../includes/SSPDT_Widget.php:108
+msgid "one"
+msgstr "jedan"
+
+#: ../includes/sspdt-options-page.php:552
+msgid "Leave blank if no tags should be specified."
+msgstr "Ostavite prazno ako je bez tagova."
+
+#: ../includes/sspdt-options-page.php:557
+msgid "Sort"
+msgstr "Sortirajte"
+
+#: ../includes/sspdt-options-page.php:568
+#: ../includes/SSPDT_Widget.php:123
+msgid "Creation Date"
+msgstr "Datum kada je napravljeno"
+
+#: ../includes/sspdt-options-page.php:572
+#: ../includes/SSPDT_Widget.php:127
+msgid "Capture Date"
+msgstr "Datum kada je slikano"
+
+#: ../includes/sspdt-options-page.php:576
+#: ../includes/SSPDT_Widget.php:131
+msgid "Modification Date"
+msgstr "Datum mdifikacije"
+
+#: ../includes/sspdt-options-page.php:580
+#: ../includes/SSPDT_Widget.php:135
+msgid "File Name"
+msgstr "Ime fajla"
+
+#: ../includes/sspdt-options-page.php:584
+#: ../includes/SSPDT_Widget.php:139
+msgid "Random"
+msgstr "Nasumično"
+
+#: ../includes/sspdt-options-page.php:591
+#: ../includes/SSPDT_Widget.php:147
+msgid "ascending"
+msgstr "rast"
+
+#: ../includes/sspdt-options-page.php:595
+#: ../includes/SSPDT_Widget.php:151
+msgid "descending"
+msgstr "pad"
+
+#: ../includes/sspdt-options-page.php:601
+msgid "Photo Feed"
+msgstr "Photo Feed"
+
+#: ../includes/sspdt-options-page.php:606
+msgid "Show a link to a photo feed for gallery images."
+msgstr "Prikaži link photo feed za galeriju slika."
+
+#: ../includes/sspdt-options-page.php:612
+msgid "Presentation"
+msgstr "Prezentacija"
+
+#: ../includes/sspdt-options-page.php:615
+msgid "FancyBox settings for image presentation."
+msgstr "FancyBox postavke za slike prezentacije. "
+
+#: ../includes/sspdt-options-page.php:620
+msgid "Box"
+msgstr "Box"
+
+#: ../includes/sspdt-options-page.php:622
+msgid "Padding"
+msgstr "Padding"
+
+#: ../includes/sspdt-options-page.php:625
+msgid "Margin"
+msgstr "Margin"
+
+#: ../includes/sspdt-options-page.php:631
+msgid "Overlay"
+msgstr "Preklapanje"
+
+#: ../includes/sspdt-options-page.php:636
+msgid "Show overlay"
+msgstr "Prikaži preklapanje"
+
+#: ../includes/sspdt-options-page.php:637
+msgid "Opacity:"
+msgstr "Neprozirnost "
+
+#: ../includes/sspdt-options-page.php:661
+msgid "Color:"
+msgstr "Boja"
+
+#: ../includes/sspdt-options-page.php:667
+msgid "Navigation"
+msgstr "Navigacija"
+
+#: ../includes/sspdt-options-page.php:673
+msgid "Cyclic navigation"
+msgstr "Kružna navigacija"
+
+#: ../includes/sspdt-options-page.php:679
+msgid "Show close button"
+msgstr "Prikaži dugme za zatvaranje"
+
+#: ../includes/sspdt-options-page.php:685
+msgid "Show navigation arrows"
+msgstr "Prikaži strelice za navigaciju"
+
+#: ../includes/sspdt-options-page.php:691
+msgid "Enable ESC key"
+msgstr "Onemogući ESC ključ"
+
+#: ../includes/sspdt-options-page.php:696
+msgid "Transitions"
+msgstr "Prelazi"
+
+#: ../includes/sspdt-options-page.php:700
+msgid "In:"
+msgstr "U:"
+
+#: ../includes/sspdt-options-page.php:708
+#: ../includes/sspdt-options-page.php:738
+msgid "fade"
+msgstr "izbledelo"
+
+#: ../includes/sspdt-options-page.php:712
+#: ../includes/sspdt-options-page.php:742
+msgid "elastic"
+msgstr "elastično"
+
+#: ../includes/sspdt-options-page.php:714
+#: ../includes/sspdt-options-page.php:744
+msgid "Speed:"
+msgstr "Brzina:"
+
+#: ../includes/sspdt-options-page.php:717
+#: ../includes/sspdt-options-page.php:747
+msgid "Easing:"
+msgstr "Lakoća:"
+
+#: ../includes/sspdt-options-page.php:721
+#: ../includes/sspdt-options-page.php:751
+msgid "Linear"
+msgstr "Linearno"
+
+#: ../includes/sspdt-options-page.php:725
+#: ../includes/sspdt-options-page.php:755
+msgid "Swing"
+msgstr "Swing"
+
+#: ../includes/sspdt-options-page.php:730
+msgid "Out:"
+msgstr "Van:"
+
+#: ../includes/sspdt-options-page.php:760
+msgid "Change speed:"
+msgstr "Promena brzine:"
+
+#: ../includes/sspdt-options-page.php:763
+msgid "Speed of resizing when changing gallery items, in milliseconds"
+msgstr "Brzina promene veličine kada se galerija menja u milisekundama"
+
+#: ../includes/sspdt-options-page.php:774
+msgid "Update settings"
+msgstr "Update postavki"
+
+#: ../includes/SSPDT.php:156
+msgid "Aquire these images as photo feed."
+msgstr "Zahtev za ove slike u photo feed-u."
+
+#: ../includes/SSPDT_Widget.php:16
+msgid "Displays a photogrid populated with SSP Director content."
+msgstr "Prikazuje photogrid naseljen SSP Director sadržajem."
+
+#: ../includes/SSPDT_Widget.php:22
+msgid "Director Photogrid"
+msgstr "Director Photogrid"
+
+#: ../includes/SSPDT_Widget.php:33
+#: ../includes/SSPDT_Widget.php:57
+msgid "Title"
+msgstr "Naslov"
+
+#: ../includes/SSPDT_Widget.php:63
+msgid "Surrounding HTML Element"
+msgstr "Okruživanje HTML elementa"
+
+#: ../includes/SSPDT_Widget.php:95
+#, php-format
+msgid "Limit to <input name=\"%s\" type=\"text\" size=\"3\" value=\"%s\"/> images."
+msgstr "Limit za <input name=\"%s\" type=\"text\" size=\"3\" value=\"%s\"/> slike."
+
+#: ../includes/SSPDT_Widget.php:113
+msgid "Sort by"
+msgstr "Sortirano po"
+
+#~ msgid "Incorrect feed parameters."
+#~ msgstr "Falsche Feed"
+
+#~ msgid "Gallery Defaults"
+#~ msgstr "Galerie Standardeinstellungen"
+
+#~ msgid "Show titles"
+#~ msgstr "Titel anzeigen"
+
+#~ msgid "Show counter"
+#~ msgstr "Bildzähler anzeigen"
+
+#~ msgid "SlideShowPro Director Tools Options"
+#~ msgstr "SlideShowPro Director Tools Einstellungen"
+
+#~ msgid "API Information"
+#~ msgstr "API Informationen"
+
+#~ msgid "API key"
+#~ msgstr "API Schlüssel"
+
+#~ msgid "API path"
+#~ msgstr "API Pfad"
+
+#~ msgid "API cache"
+#~ msgstr "API Cache"
+
+#~ msgid "Image Sizes and Handling"
+#~ msgstr "Bildgrößen und -handhabung"
+
+#~ msgid "Image Presentation"
+#~ msgstr "Präsentation"
+
+#~ msgid ""
+#~ "Enter SSP Director API key and path info here. You can find these values "
+#~ "on the \"System Info\" page of your Director installation."
+#~ msgstr ""
+#~ "Tragen Sie hier die Informationen zum SSP Director API ein. Sie finden "
+#~ "diese Werte auf der Seite \"System Einstellungen\" Ihrer Director "
+#~ "Installation."
+
+#~ msgid "Define image sizes and how images should fit into."
+#~ msgstr "Bestimmen Sie Bildgrößen und Bildzuschnitt."
+
+#~ msgid "Select a tool for image presentation."
+#~ msgstr ""
+#~ "Wählen Sie ein Tool für die Präsentation von Bildern und Galerien aus."
+
+#~ msgid ""
+#~ "<div class='updated fade'>Your cache directory is not writable. You can't "
+#~ "activate caching unless you allow your webserver to write to <code>'wp-"
+#~ "content/plugins/%s/api/cache'</code>.</div>"
+#~ msgstr ""
+#~ "<div class='updated fade'>Ihr Cache Verzeichnis kann nicht beschrieben "
+#~ "werden. Um das Caching zu aktivieren, müssen Sie Ihrem Webserver "
+#~ "erlauben, in das Verzeichnis <code>'wp-content/plugins/%s/api/cache'</"
+#~ "code> zu schreiben.</div>"
+
+#~ msgid "Enabled"
+#~ msgstr "Aktiviert"
+
+#~ msgid "Disabled"
+#~ msgstr "Deaktiviert"
+
+#~ msgid "Feed Preview"
+#~ msgstr "Photo-Feed Vorschau"
+
+#, fuzzy
+#~ msgid "Download"
+#~ msgstr "Download"
+
+#~ msgid "Select a tool for image presentation"
+#~ msgstr "Wählen Sie ein Tool für die Bild-Darstellung aus"
+
+#~ msgid "Gallery Tool"
+#~ msgstr "Galerie Tool"
+
+#~ msgid "crop"
+#~ msgstr "ja"
+
+#~ msgid "sharpen"
+#~ msgstr "ja"
+
+#~ msgid "show"
+#~ msgstr "anzeigen"
+
+#~ msgid "Sharpen image"
+#~ msgstr "Bild schärfen"
