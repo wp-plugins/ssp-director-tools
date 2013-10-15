@@ -76,7 +76,7 @@ Edit the parameters of the `$sspd_feed_full` variable as desired. The variable `
 == Changelog ==
 
 = 1.1.2 =
-* Integrated sr_SR (Serbian) localisation. Thanks to Borisa Djuraskovic (borisad@webhostinghub.com) for the translation.
+* Integrated sr_RS (Serbian) localisation. Thanks to Borisa Djuraskovic (borisad@webhostinghub.com) for the translation.
 
 = 1.1.1 =
 * Changed default settings for number of images to show in photo grids (24) and caption position (over)
