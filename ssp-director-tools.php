@@ -2,7 +2,7 @@
 /*
  Plugin Name: SSP Director Tools
  Description: SSP Director Tools help you to link content from a SlideShowPro Director installation to WordPress posts and pages.
- Version: 1.1.2.2
+ Version: 1.2
  Text Domain: sspdt
  Author: Matthias Scheidl <dev@scheidl.name>
  */
