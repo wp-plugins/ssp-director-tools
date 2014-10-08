@@ -23,7 +23,7 @@ class SSPDT extends Director{
 
 
 	/**
-	 * Adds the needes formats as defined on the plugin options page.
+	 * Adds the needed formats as defined on the plugin options page.
 	 * @param array $format_options The format options as defined in the plugin settings
 	 * @return void
 	 */
@@ -143,10 +143,10 @@ class SSPDT extends Director{
 			$alt = ($content->caption) ? $this->prep($content->caption) : $this->prep($content->iptc->caption);
 			$out .= sprintf ("<a class='%s' rel='%s' href='%s' title='%s'>
 	<img class='sspdt_grid' src='%s' alt='%s' width='%s' height='%s' type='image/jpeg'/>
-</a>\n", "sspdt-fancybox", $rel, $content->large->url, $title, $content->grid->url, $alt, $width, $height);
+</a>\n", "sspdt-fancybox", $rel, $this->watermarked_url( $content, 'large' ), $title, $content->grid->url, $alt, $width, $height);
 			
 			$out .= $this->meta_html($content, "large");
-			
+
 			}
 		
 
@@ -172,8 +172,8 @@ class SSPDT extends Director{
 	public function single($image, $align, $showcaption, $post_id) {
 
 		$content = $this->content->get($image);
-		$large = $content->large->url;
-		$thumb = $content->thumb->url;
+		$large = $this->watermarked_url( $content, 'large' );
+		$thumb = $this->watermarked_url( $content, 'thumb' );
 		$title = $content->caption ? $this->prep($content->caption) : "";
 
 		$width =  (int)$content->thumb->width;
@@ -198,7 +198,7 @@ class SSPDT extends Director{
 					%s
 					<p class='wp-caption-text'>%s</p>
 				</div>", 
-				$image, $align, $captionwidth, "fancybox", $large, $rel, $title, $thumb, $alt, $width, $height, $this->meta_html($content, "large"), $caption);
+				$image, $align, $captionwidth, "sspdt-fancybox", $large, $rel, $title, $thumb, $alt, $width, $height, $this->meta_html($content, "large"), $caption);
 
 				return $out;
 			}
@@ -207,7 +207,7 @@ class SSPDT extends Director{
 		$out = sprintf("<a class='%s sspdt_thumb' href='%s' rel='%s' title='%s'>
 			<img class='%s' src='%s' alt='%s' width='%s' height='%s' />
 		</a>", 
-		"fancybox", $large, $rel, $title, $align, $thumb, $alt, $width, $height);
+		"sspdt-fancybox", $large, $rel, $title, $align, $thumb, $alt, $width, $height);
 		
 		$out .= $this->meta_html($content, "large");
 		
@@ -217,8 +217,8 @@ class SSPDT extends Director{
 	
 	/**
 	 * Formats content metadata
-	 * @param array content object with content metadata
-	 * @param string size content size (thumb|large)
+	 * @param array $content object with content metadata
+	 * @param string $size content size (thumb|large)
 	 * @return string The formatted html output
 	 */
 	private function meta_html($content, $size) {
@@ -266,6 +266,32 @@ class SSPDT extends Director{
 	private function prep($s) {
 		return  ( htmlspecialchars( $s, ENT_QUOTES, 'UTF-8', false ) );
 	}
+	
+	
+	/**
+	 * Get watermarked content url, if available
+	 * @param array $content the content object
+	 * @param string $size the image size 'large' or 'thumb'
+	 * @return string or false
+	 */
+	private function watermarked_url($content, $size) {
+		if( $size === 'large' ) {
+			if ($this->format_options['large_watermark'] == '1' && $content->large->watermarked_url != '') {	
+				return $content->large->watermarked_url;
+			} else {
+				return $content->large->url;
+			}
+		} else if ( $size === 'thumb' ) {
+			if ($this->format_options['thumb_watermark'] == '1' && $content->thumb->watermarked_url != '') {
+				return $content->thumb->watermarked_url;
+			} else {
+				return $content->thumb->url;
+			}
+		} else {
+			return false;
+		}
+	}
+	
 
 
 }

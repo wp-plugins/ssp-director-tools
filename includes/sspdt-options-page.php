@@ -60,6 +60,7 @@ function sspdt_options_page() {
 		$format_options['thumb_align'] = sspdt_align( $_POST['thumb_align'] );
 		$format_options['thumb_caption'] = sspdt_bool( $_POST['thumb_caption'] );
 		$format_options['thumb_caption_format'] = htmlspecialchars( sspdt_html_format( $_POST['thumb_caption_format'] ), ENT_COMPAT, "UTF-8", false );
+		$format_options['thumb_watermark'] = sspdt_bool( $_POST['thumb_watermark'] );
 
 		$format_options['large_width'] = sspdt_posint( $_POST['large_width'] );
 		$format_options['large_height'] = sspdt_posint( $_POST['large_height'] );
@@ -67,8 +68,11 @@ function sspdt_options_page() {
 		$format_options['large_quality'] = sspdt_posint( $_POST['large_quality'] );
 		$format_options['large_sharpen'] = sspdt_bool( $_POST['large_sharpen'] );
 		$format_options['large_caption_format'] = htmlspecialchars( sspdt_html_format( $_POST['large_caption_format'] ), ENT_COMPAT, "UTF-8", false );
+		$format_options['large_watermark'] = sspdt_bool( $_POST['large_watermark'] );
 		
 		$format_options['date_format'] = sspdt_nohtml( $_POST['date_format'] );
+		
+		//var_dump($format_options);
 
 		$defaults = array();
 
@@ -313,6 +317,7 @@ $j(document).ready(function() {
 						<th class="manage-column"><?php _e('Cropping', 'sspdt'); ?></th>
 						<th class="manage-column"><?php _e('Sharpening', 'sspdt'); ?></th>
 						<th class="manage-column"><?php _e('Alignment', 'sspdt'); ?></th>
+						<th class="manage-column"><?php _e('Watermark', 'sspdt'); ?> <sup>*</sup></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -339,6 +344,7 @@ $j(document).ready(function() {
 							value="1"
 							<?php if ( $format_options['grid_sharpen'] == '1') { echo "checked = 'checked'";}  ?> />
 						</td>
+						<td></td>
 						<td></td>
 					</tr>
 					<tr valign="middle">
@@ -383,6 +389,10 @@ $j(document).ready(function() {
 								</option>
 						</select>
 						</td>
+						<td><input id="thumb_watermark" name="thumb_watermark" type="checkbox"
+							value="1"
+							<?php if ( $format_options['thumb_watermark'] == '1') { echo "checked = 'checked'";}  ?> />
+						</td>
 					</tr>
 					<tr valign="middle">
 						<th scope="row"><img class="sspdt_handling_icon"
@@ -408,6 +418,10 @@ $j(document).ready(function() {
 							<?php if ( $format_options['large_sharpen'] == '1') { echo "checked = 'checked'";}  ?> />
 						</td>
 						<td></td>
+						<td><input id="large_watermark" name="large_watermark" type="checkbox"
+							value="1"
+							<?php if ( $format_options['large_watermark'] == '1') { echo "checked = 'checked'";}  ?> />
+						</td>
 					</tr>
 
 				</tbody>
@@ -420,6 +434,7 @@ $j(document).ready(function() {
 						<th>&nbsp;</th>
 						<th>&nbsp;</th>
 						<th>&nbsp;</th>
+						<th><sup>*</sup><?php _e('if available', 'sspdt'); ?></th>
 					</tr>
 				</tfoot>
 			</table>
@@ -804,6 +819,7 @@ function sspdt_default_options() {
 	if( !isset( $options['thumb_align'] ) ) $tmp['thumb_align'] = 'alignleft';
 	if( !isset( $options['thumb_caption'] ) ) $tmp['thumb_caption'] = '1';
 	if( !isset( $options['thumb_caption_format'] ) ) $tmp['thumb_caption_format'] = '%caption%';
+	if( !isset( $options['thumb_watermark'] ) ) $tmp['thumb_watermark'] = '0';
 	
 	if( !isset( $options['large_width'] ) ) $tmp['large_width'] = '1000';
 	if( !isset( $options['large_height'] ) ) $tmp['large_height'] = '720';
@@ -811,6 +827,7 @@ function sspdt_default_options() {
 	if( !isset( $options['large_quality'] ) ) $tmp['large_quality'] = '85';
 	if( !isset( $options['large_sharpen'] ) ) $tmp['large_sharpen'] = '1';
 	if( !isset( $options['large_caption_format'] ) ) $tmp['large_caption_format'] = '<div style=&quot;text-align:left&quot;><b>%caption%</b><br />%byline% (%date% in %city%, %country%)</div>';
+	if( !isset( $options['large_watermark'] ) ) $tmp['large_watermark'] = '0';
 	
 	if( !isset( $options['date_format'] ) ) $tmp['date_format'] = 'd.m.Y';
 
