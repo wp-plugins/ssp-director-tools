@@ -62,9 +62,11 @@ add_action('wp_head', 'init_fancybox');
 
 function add_fancybox_scripts() {
 	if(!is_admin()) {
-		wp_deregister_script( 'jquery' );
-		wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js');
-		wp_enqueue_script( 'jquery' );
+		if(!wp_script_is('jquery')) {
+			wp_deregister_script( 'jquery' );
+			wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js');
+			wp_enqueue_script( 'jquery' );
+		}
 		wp_register_script('sspdt_fancybox_js', plugins_url('/js/fancybox/jquery.fancybox-1.3.4.pack.js', __FILE__));
 		wp_enqueue_script('sspdt_fancybox_js');
 		wp_register_script('sspdt_fancybox_easing_js', plugins_url('/js/fancybox/jquery.easing-1.3.pack.js', __FILE__));
