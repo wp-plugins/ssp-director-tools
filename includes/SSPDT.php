@@ -30,29 +30,29 @@ class SSPDT extends Director{
 	private function add_formats($format_options) {
 
 		$grid = array(
-		     'name' => 'grid', 
-		     'width' => $format_options['grid_width'], 
-		     'height' => $format_options['grid_height'], 
-		     'crop' => ($format_options['grid_crop'] == '1' ? 1 : 0), 
-		     'quality' => $format_options['grid_quality'], 
+		     'name'       => 'grid', 
+		     'width'      => $format_options['grid_width'], 
+		     'height'     => $format_options['grid_height'], 
+		     'crop'       => ($format_options['grid_crop'] == '1' ? 1 : 0), 
+		     'quality'    => $format_options['grid_quality'], 
 		     'sharpening' => ($format_options['grid_sharpen'] == '1' ? 1 : 0)
 		);
 
 		$thumb = array(
-		     'name' => 'thumb', 
-		     'width' => $format_options['thumb_width'], 
-		     'height' => $format_options['thumb_height'], 
-		     'crop' => ($format_options['thumb_crop'] == '1' ? 1 : 0), 
-		     'quality' => $format_options['thumb_quality'], 
+		     'name'       => 'thumb', 
+		     'width'      => $format_options['thumb_width'], 
+		     'height'     => $format_options['thumb_height'], 
+		     'crop'       => ($format_options['thumb_crop'] == '1' ? 1 : 0), 
+		     'quality'    => $format_options['thumb_quality'], 
 		     'sharpening' => ($format_options['thumb_sharpen'] == '1' ? 1 : 0)
 		);
 
 		$large = array(
-		     'name' => 'large', 
-		     'width' => $format_options['large_width'], 
-		     'height' => $format_options['large_height'], 
-		     'crop' => ($format_options['large_crop'] == '1' ? 1 : 0), 
-		     'quality' => $format_options['large_quality'], 
+		     'name'       => 'large', 
+		     'width'      => $format_options['large_width'], 
+		     'height'     => $format_options['large_height'], 
+		     'crop'       => ($format_options['large_crop'] == '1' ? 1 : 0), 
+		     'quality'    => $format_options['large_quality'], 
 		     'sharpening' => ($format_options['large_sharpen'] == '1' ? 1 : 0)
 		);
 
@@ -85,28 +85,28 @@ class SSPDT extends Director{
 		$params .= "&only_images=1";
 
 		if($content_options['model'] == "gallery" || $content_options['model'] == "album") {
-			$scope = array ($content_options['model'], (int) $content_options['model_id']);
-			$options['scope'] = $scope;
-			$params .= "&model=" . $content_options['model'];
-			$params .= "&model_id=" . $content_options['model_id'];
+			$scope               = array ($content_options['model'], (int) $content_options['model_id']);
+			$options['scope']    = $scope;
+			$params             .= "&model=" . $content_options['model'];
+			$params             .= "&model_id=" . $content_options['model_id'];
 		}
 
 		if((int) $content_options['limit'] > 0) {
-			$options['limit'] = $content_options['limit'];
-			$params .= "&limit=" . $content_options['limit'];
+			$options['limit']    = $content_options['limit'];
+			$params             .= "&limit=" . $content_options['limit'];
 		}
 
 		if($content_options['tags'] != "") {
 			$options['tags'] = array($content_options['tags'], $content_options['tagmode']);
-			$params .= "&tags=" . $content_options['tags'];
-			$params .= "&tagmode=" . $content_options['tagmode'];
+			$params         .= "&tags=" . $content_options['tags'];
+			$params         .= "&tagmode=" . $content_options['tagmode'];
 		}
 
 		if($content_options['sort_on'] != "null") {
-			$options['sort_on'] = $content_options['sort_on'];
-			$options['sort_direction'] = $content_options['sort_direction'];
-			$params .= "&sort_on=" . $content_options['sort_on'];
-			$params .= "&sort_direction=" . $content_options['sort_direction'];
+			$options['sort_on']          = $content_options['sort_on'];
+			$options['sort_direction']   = $content_options['sort_direction'];
+			$params                     .= "&sort_on=" . $content_options['sort_on'];
+			$params                     .= "&sort_direction=" . $content_options['sort_direction'];
 		}
 
 		if($content_options['sort_on' == "random"]) {
@@ -119,33 +119,32 @@ class SSPDT extends Director{
 			$rel = "widget";
 		}
 
-		$params = substr($params, 1);
+		$params       = substr($params, 1);
 
 		$feed_options = get_option('sspdt_feed_options');
-		$baseurl = $feed_options['feed_url'] . 'feed.php';
-		$secret = $feed_options['secret'];
+		$baseurl      = $feed_options['feed_url'] . 'feed.php';
+		$secret       = $feed_options['secret'];
 
-		$crypt = new Encryption($secret);
-		$checksum = md5($params);
+		$crypt        = new Encryption($secret);
+		$checksum     = md5($params);
 
-		$feedurl = $baseurl . '?p=' . $crypt->encode($params) . '&c=' . $checksum;
+		$feedurl      = $baseurl . '?p=' . $crypt->encode($params) . '&c=' . $checksum;
 
-		$contents = $this->content->all($options);
+		$contents     = $this->content->all($options);
 
-		$out = ( "\n<div class='sspd_grid' style='display:block;margin-top:6px;'>\n" );
+		$out          = ( "\n<div class='sspd_grid' style='display:block;margin-top:6px;'>\n" );
 
 		foreach( $contents as $content ) {
-			$width =  (int)$content->grid->width;
-			$height = (int)$content->grid->height;
-
-			$title = ($content->caption) ? $this->prep($content->caption) : $this->prep($content->iptc->caption);
-			//$title = $this->get_meta($content);
-			$alt = ($content->caption) ? $this->prep($content->caption) : $this->prep($content->iptc->caption);
-			$out .= sprintf ("<a class='%s' rel='%s' href='%s' title='%s'>
-	<img class='sspdt_grid' src='%s' alt='%s' width='%s' height='%s' type='image/jpeg'/>
+		
+			$width   = (int)$content->grid->width;
+			$height  = (int)$content->grid->height;
+			$title   = ($content->caption) ? $this->prep($content->caption) : $this->prep($content->iptc->caption);
+			$alt     = ($content->caption) ? $this->prep($content->caption) : $this->prep($content->iptc->caption);
+			$out    .= sprintf ("<a class='%s' rel='%s' href='%s' title='%s'>
+	<img class = 'sspdt_grid' src='%s' alt='%s' width='%s' height='%s' type='image/jpeg'/>
 </a>\n", "sspdt-fancybox", $rel, $this->watermarked_url( $content, 'large' ), $title, $content->grid->url, $alt, $width, $height);
 			
-			$out .= $this->meta_html($content, "large");
+			$out    .= $this->meta_html($content, "large");
 
 			}
 		
@@ -171,18 +170,18 @@ class SSPDT extends Director{
 	 */
 	public function single($image, $align, $showcaption, $post_id) {
 
-		$content = $this->content->get($image);
-		$large = $this->watermarked_url( $content, 'large' );
-		$thumb = $this->watermarked_url( $content, 'thumb' );
-		$title = $content->caption ? $this->prep($content->caption) : "";
+		$content      = $this->content->get($image);
+		$large        = $this->watermarked_url( $content, 'large' );
+		$thumb        = $this->watermarked_url( $content, 'thumb' );
+		$title        = $content->caption ? $this->prep($content->caption) : "";
 
-		$width =  (int)$content->thumb->width;
-		$height = (int)$content->thumb->height;
+		$width        = (int)$content->thumb->width;
+		$height       = (int)$content->thumb->height;
 
 		$captionwidth = $width + 2 * 5;
 
-		$rel = "post-" . $post_id;
-		$alt = $content->caption ? $this->prep($content->caption) : "";
+		$rel          = "post-" . $post_id;
+		$alt          = $content->caption ? $this->prep($content->caption) : "";
 		
 		//debug_var($content->iptc);
 
@@ -231,20 +230,21 @@ class SSPDT extends Director{
 			return "";
 		}
 		
-		$date_format = $this->format_options['date_format'];
+		$date_format  = $this->format_options['date_format'];
 				
-		$caption = ($content->caption) ? $this->prep($content->caption) : $this->prep($content->iptc->caption);
-		$byline = $this->prep($content->iptc->byline);
-		$date = date($date_format, $content->captured_on);
-		$city = $this->prep($content->iptc->city);
-		$country = $this->prep($content->iptc->country);
-		$latitude =  $content->exif->latitude;
-		$longitude =  $content->exif->longitude;
+		$caption      = ($content->caption) ? $this->prep($content->caption) : $this->prep($content->iptc->caption);
+		$byline       = $this->prep($content->iptc->byline);
+		$date         = date($date_format, $content->captured_on);
+		$city         = $this->prep($content->iptc->city);
+		$country      = $this->prep($content->iptc->country);
+		$latitude     = $content->exif->latitude;
+		$longitude    = $content->exif->longitude;
 		
-		$search = array("%caption%", "%byline%", "%date%", "%city%", "%country%");
-		$replace = array($caption, $byline, $date, $city, $country);
+		$search       = array("%caption%", "%byline%", "%date%", "%city%", "%country%");
+		$replace      = array($caption, $byline, $date, $city, $country);
 		
-		$html = "";
+		$html         = "";
+		
 		if($size == "large") {
 			$html .= "<div style='display:none;'>";
 			$html .= str_replace($search, $replace, $format);

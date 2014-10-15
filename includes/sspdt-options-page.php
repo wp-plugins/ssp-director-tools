@@ -44,77 +44,77 @@ function sspdt_options_page() {
 
 		update_option( 'sspdt_api_cache', $_POST['sspdt_api_cache'] );
 
-		$format_options = array();
+		$format_options                           = array();
 
-		$format_options['grid_width'] = sspdt_posint ( $_POST['grid_width'] );
-		$format_options['grid_height'] = sspdt_posint ( $_POST['grid_height'] );
-		$format_options['grid_crop'] = sspdt_bool( $_POST['grid_crop'] );
-		$format_options['grid_quality'] = sspdt_posint ( $_POST['grid_quality'] );
-		$format_options['grid_sharpen'] = sspdt_bool( $_POST['grid_sharpen'] );
+		$format_options['grid_width']             = sspdt_posint ( $_POST['grid_width'] );
+		$format_options['grid_height']            = sspdt_posint ( $_POST['grid_height'] );
+		$format_options['grid_crop']              = sspdt_bool( $_POST['grid_crop'] );
+		$format_options['grid_quality']           = sspdt_posint ( $_POST['grid_quality'] );
+		$format_options['grid_sharpen']           = sspdt_bool( $_POST['grid_sharpen'] );
 
-		$format_options['thumb_width'] = sspdt_posint( $_POST['thumb_width'] );
-		$format_options['thumb_height'] = sspdt_posint( $_POST['thumb_height'] );
-		$format_options['thumb_crop'] = sspdt_bool( $_POST['thumb_crop'] );
-		$format_options['thumb_quality'] = sspdt_posint( $_POST['thumb_quality'] );
-		$format_options['thumb_sharpen'] = sspdt_bool( $_POST['thumb_sharpen'] );
-		$format_options['thumb_align'] = sspdt_align( $_POST['thumb_align'] );
-		$format_options['thumb_caption'] = sspdt_bool( $_POST['thumb_caption'] );
-		$format_options['thumb_caption_format'] = htmlspecialchars( sspdt_html_format( $_POST['thumb_caption_format'] ), ENT_COMPAT, "UTF-8", false );
-		$format_options['thumb_watermark'] = sspdt_bool( $_POST['thumb_watermark'] );
+		$format_options['thumb_width']            = sspdt_posint( $_POST['thumb_width'] );
+		$format_options['thumb_height']           = sspdt_posint( $_POST['thumb_height'] );
+		$format_options['thumb_crop']             = sspdt_bool( $_POST['thumb_crop'] );
+		$format_options['thumb_quality']          = sspdt_posint( $_POST['thumb_quality'] );
+		$format_options['thumb_sharpen']          = sspdt_bool( $_POST['thumb_sharpen'] );
+		$format_options['thumb_align']            = sspdt_align( $_POST['thumb_align'] );
+		$format_options['thumb_caption']          = sspdt_bool( $_POST['thumb_caption'] );
+		$format_options['thumb_caption_format']   = htmlspecialchars( sspdt_html_format( $_POST['thumb_caption_format'] ), ENT_COMPAT, "UTF-8", false );
+		$format_options['thumb_watermark']        = sspdt_bool( $_POST['thumb_watermark'] );
 
-		$format_options['large_width'] = sspdt_posint( $_POST['large_width'] );
-		$format_options['large_height'] = sspdt_posint( $_POST['large_height'] );
-		$format_options['large_crop'] = sspdt_bool( $_POST['large_crop'] );
-		$format_options['large_quality'] = sspdt_posint( $_POST['large_quality'] );
-		$format_options['large_sharpen'] = sspdt_bool( $_POST['large_sharpen'] );
-		$format_options['large_caption_format'] = htmlspecialchars( sspdt_html_format( $_POST['large_caption_format'] ), ENT_COMPAT, "UTF-8", false );
-		$format_options['large_watermark'] = sspdt_bool( $_POST['large_watermark'] );
+		$format_options['large_width']            = sspdt_posint( $_POST['large_width'] );
+		$format_options['large_height']           = sspdt_posint( $_POST['large_height'] );
+		$format_options['large_crop']             = sspdt_bool( $_POST['large_crop'] );
+		$format_options['large_quality']          = sspdt_posint( $_POST['large_quality'] );
+		$format_options['large_sharpen']          = sspdt_bool( $_POST['large_sharpen'] );
+		$format_options['large_caption_format']   = htmlspecialchars( sspdt_html_format( $_POST['large_caption_format'] ), ENT_COMPAT, "UTF-8", false );
+		$format_options['large_watermark']        = sspdt_bool( $_POST['large_watermark'] );
 		
-		$format_options['date_format'] = sspdt_nohtml( $_POST['date_format'] );
+		$format_options['date_format']            = sspdt_nohtml( $_POST['date_format'] );
 		
 		//var_dump($format_options);
 
 		$defaults = array();
 
-		$defaults['model'] = sspdt_model( $_POST['model'] );
-		$defaults['model_id'] = sspdt_posint( $_POST['model_id'] );
-		$defaults['limit'] = sspdt_posint( $_POST['limit'] );
-		$defaults['tags'] = sspdt_nohtml( $_POST['tags'] );
-		$defaults['tagmode'] = sspdt_tagmode( $_POST['tagmode'] );
-		$defaults['sort_on'] = sspdt_sort_on( $_POST['sort_on'] );
-		$defaults['sort_direction'] = sspdt_sort_direction( $_POST['sort_direction'] );
-		$defaults['rss'] = sspdt_bool( $_POST['rss'] );
+		$defaults['model']            = sspdt_model( $_POST['model'] );
+		$defaults['model_id']         = sspdt_posint( $_POST['model_id'] );
+		$defaults['limit']            = sspdt_posint( $_POST['limit'] );
+		$defaults['tags']             = sspdt_nohtml( $_POST['tags'] );
+		$defaults['tagmode']          = sspdt_tagmode( $_POST['tagmode'] );
+		$defaults['sort_on']          = sspdt_sort_on( $_POST['sort_on'] );
+		$defaults['sort_direction']   = sspdt_sort_direction( $_POST['sort_direction'] );
+		$defaults['rss']              = sspdt_bool( $_POST['rss'] );
 
 		$fb = array();
 
-		$fb['padding'] = sspdt_posint( $_POST['padding'] );
-		$fb['margin'] = sspdt_posint( $_POST['margin'] );
+		$fb['padding']            = sspdt_posint( $_POST['padding'] );
+		$fb['margin']             = sspdt_posint( $_POST['margin'] );
 
-		$fb['titleShow'] = sspdt_bool( $_POST['titleShow'] );
-		$fb['titlePosition'] = sspdt_fb_title_position( $_POST['titlePosition'] );
-		$fb['counterShow'] = sspdt_bool( $_POST['counterShow'] );
+		$fb['titleShow']          = sspdt_bool( $_POST['titleShow'] );
+		$fb['titlePosition']      = sspdt_fb_title_position( $_POST['titlePosition'] );
+		$fb['counterShow']        = sspdt_bool( $_POST['counterShow'] );
 
-		$fb['overlayShow'] = sspdt_bool( $_POST['overlayShow'] );
-		$fb['overlayOpacity'] = sspdt_fb_opacity( $_POST['overlayOpacity'] );
-		$fb['overlayColor'] = sspdt_color( $_POST['overlayColor'] );
+		$fb['overlayShow']        = sspdt_bool( $_POST['overlayShow'] );
+		$fb['overlayOpacity']     = sspdt_fb_opacity( $_POST['overlayOpacity'] );
+		$fb['overlayColor']       = sspdt_color( $_POST['overlayColor'] );
 
-		$fb['cyclic'] = sspdt_bool( $_POST['cyclic'] );
-		$fb['showNavArrows'] = sspdt_bool( $_POST['showNavArrows'] );
-		$fb['showCloseButton'] = sspdt_bool( $_POST['showCloseButton'] );
+		$fb['cyclic']             = sspdt_bool( $_POST['cyclic'] );
+		$fb['showNavArrows']      = sspdt_bool( $_POST['showNavArrows'] );
+		$fb['showCloseButton']    = sspdt_bool( $_POST['showCloseButton'] );
 		$fb['enableEscapeButton'] = sspdt_bool( $_POST['enableEscapeButton'] );
 
-		$fb['transitionIn'] = sspdt_fb_transition( $_POST['transitionIn'] );
-		$fb['speedIn'] = sspdt_posint( $_POST['speedIn'] );
-		$fb['easingIn'] = sspdt_fb_easing( $_POST['easingIn'] );
-		$fb['transitionOut'] = sspdt_fb_transition( $_POST['transitionOut'] );
-		$fb['speedOut'] = sspdt_posint( $_POST['speedOut'] );
-		$fb['easingOut'] = sspdt_fb_easing( $_POST['easingOut'] );
-		$fb['changeSpeed'] = sspdt_posint( $_POST['changeSpeed'] );
+		$fb['transitionIn']       = sspdt_fb_transition( $_POST['transitionIn'] );
+		$fb['speedIn']            = sspdt_posint( $_POST['speedIn'] );
+		$fb['easingIn']           = sspdt_fb_easing( $_POST['easingIn'] );
+		$fb['transitionOut']      = sspdt_fb_transition( $_POST['transitionOut'] );
+		$fb['speedOut']           = sspdt_posint( $_POST['speedOut'] );
+		$fb['easingOut']          = sspdt_fb_easing( $_POST['easingOut'] );
+		$fb['changeSpeed']        = sspdt_posint( $_POST['changeSpeed'] );
 
 		$feed_options = array();
 
 		$feed_options['feed_url'] = rtrim( esc_url( $_POST['feed_url'] ), " /") . "/";
-		$feed_options['secret'] = sspdt_nohtml( $_POST['secret'] );
+		$feed_options['secret']   = sspdt_nohtml( $_POST['secret'] );
 
 
 		update_option( 'sspdt_format_options', $format_options );
@@ -136,12 +136,12 @@ function sspdt_options_page() {
 	}
 
 
-	$format_options = get_option('sspdt_format_options');
-	$defaults = get_option('sspdt_defaults');
-	$fb = get_option('sspdt_fancybox');
-	$feed_options = get_option('sspdt_feed_options');
+	$format_options    = get_option('sspdt_format_options');
+	$defaults          = get_option('sspdt_defaults');
+	$fb                = get_option('sspdt_fancybox');
+	$feed_options      = get_option('sspdt_feed_options');
 
-	$imdir =  WP_PLUGIN_URL . "/ssp-director-tools/images/";
+	$imdir             = WP_PLUGIN_URL . "/ssp-director-tools/images/";
 
 	?>
 
@@ -802,78 +802,78 @@ $j(document).ready(function() {
  */
 function sspdt_default_options() {
 	
-	$options = get_option('sspdt_format_options');
-	$tmp = $options;
+	$options   = get_option('sspdt_format_options');
+	$tmp       = $options;
 	
-	if( !isset( $options['grid_width'] ) ) $tmp['grid_width'] = '60';
-	if( !isset( $options['grid_height'] ) ) $tmp['grid_height'] = '60';
-	if( !isset( $options['grid_crop'] ) ) $tmp['grid_crop'] = '1';
-	if( !isset( $options['grid_quality'] ) ) $tmp['grid_quality'] = '75';
-	if( !isset( $options['grid_sharpen'] ) ) $tmp['grid_sharpen'] = '1';
+	if( !isset( $options['grid_width'] ) ) $tmp['grid_width']                      = '60';
+	if( !isset( $options['grid_height'] ) ) $tmp['grid_height']                    = '60';
+	if( !isset( $options['grid_crop'] ) ) $tmp['grid_crop']                        = '1';
+	if( !isset( $options['grid_quality'] ) ) $tmp['grid_quality']                  = '75';
+	if( !isset( $options['grid_sharpen'] ) ) $tmp['grid_sharpen']                  = '1';
 	
-	if( !isset( $options['thumb_width'] ) ) $tmp['thumb_width'] = '240';
-	if( !isset( $options['thumb_height'] ) ) $tmp['thumb_height'] = '240';
-	if( !isset( $options['thumb_crop'] ) ) $tmp['thumb_crop'] = '0';
-	if( !isset( $options['thumb_quality'] ) ) $tmp['thumb_quality'] = '80';
-	if( !isset( $options['thumb_sharpen'] ) ) $tmp['thumb_sharpen'] = '1';
-	if( !isset( $options['thumb_align'] ) ) $tmp['thumb_align'] = 'alignleft';
-	if( !isset( $options['thumb_caption'] ) ) $tmp['thumb_caption'] = '1';
-	if( !isset( $options['thumb_caption_format'] ) ) $tmp['thumb_caption_format'] = '%caption%';
-	if( !isset( $options['thumb_watermark'] ) ) $tmp['thumb_watermark'] = '0';
+	if( !isset( $options['thumb_width'] ) ) $tmp['thumb_width']                    = '240';
+	if( !isset( $options['thumb_height'] ) ) $tmp['thumb_height']                  = '240';
+	if( !isset( $options['thumb_crop'] ) ) $tmp['thumb_crop']                      = '0';
+	if( !isset( $options['thumb_quality'] ) ) $tmp['thumb_quality']                = '80';
+	if( !isset( $options['thumb_sharpen'] ) ) $tmp['thumb_sharpen']                = '1';
+	if( !isset( $options['thumb_align'] ) ) $tmp['thumb_align']                    = 'alignleft';
+	if( !isset( $options['thumb_caption'] ) ) $tmp['thumb_caption']                = '1';
+	if( !isset( $options['thumb_caption_format'] ) ) $tmp['thumb_caption_format']  = '%caption%';
+	if( !isset( $options['thumb_watermark'] ) ) $tmp['thumb_watermark']            = '0';
 	
-	if( !isset( $options['large_width'] ) ) $tmp['large_width'] = '1000';
-	if( !isset( $options['large_height'] ) ) $tmp['large_height'] = '720';
-	if( !isset( $options['large_crop'] ) ) $tmp['large_crop'] = '0';
-	if( !isset( $options['large_quality'] ) ) $tmp['large_quality'] = '85';
-	if( !isset( $options['large_sharpen'] ) ) $tmp['large_sharpen'] = '1';
-	if( !isset( $options['large_caption_format'] ) ) $tmp['large_caption_format'] = '<div style=&quot;text-align:left&quot;><b>%caption%</b><br />%byline% (%date% in %city%, %country%)</div>';
-	if( !isset( $options['large_watermark'] ) ) $tmp['large_watermark'] = '0';
+	if( !isset( $options['large_width'] ) ) $tmp['large_width']                    = '1000';
+	if( !isset( $options['large_height'] ) ) $tmp['large_height']                  = '720';
+	if( !isset( $options['large_crop'] ) ) $tmp['large_crop']                      = '0';
+	if( !isset( $options['large_quality'] ) ) $tmp['large_quality']                = '85';
+	if( !isset( $options['large_sharpen'] ) ) $tmp['large_sharpen']                = '1';
+	if( !isset( $options['large_caption_format'] ) ) $tmp['large_caption_format']  = '<div style=&quot;text-align:left&quot;><b>%caption%</b><br />%byline% (%date% in %city%, %country%)</div>';
+	if( !isset( $options['large_watermark'] ) ) $tmp['large_watermark']            = '0';
 	
-	if( !isset( $options['date_format'] ) ) $tmp['date_format'] = 'd.m.Y';
+	if( !isset( $options['date_format'] ) ) $tmp['date_format']                    = 'd.m.Y';
 
 	update_option( 'sspdt_format_options', $tmp );
 	
-	$options = get_option('sspdt_defaults');
-	$tmp = $options;
+	$options   = get_option('sspdt_defaults');
+	$tmp       = $options;
 	
-	if( !isset( $options['model'] ) ) $tmp['model'] = 'gallery';
-	if( !isset( $options['model_id'] ) ) $tmp['model_id'] = '1';
-	if( !isset( $options['limit'] ) ) $tmp['limit'] = '24';
-	if( !isset( $options['tags'] ) ) $tmp['tags'] = '';
-	if( !isset( $options['tagmode'] ) ) $tmp['tagmode'] = 'one';
+	if( !isset( $options['model'] ) ) $tmp['model']                    = 'gallery';
+	if( !isset( $options['model_id'] ) ) $tmp['model_id']              = '1';
+	if( !isset( $options['limit'] ) ) $tmp['limit']                    = '24';
+	if( !isset( $options['tags'] ) ) $tmp['tags']                      = '';
+	if( !isset( $options['tagmode'] ) ) $tmp['tagmode']                = 'one';
 	
-	if( !isset( $options['sort_on'] ) ) $tmp['sort_on'] = 'captured_on';
-	if( !isset( $options['sort_direction'] ) ) $tmp['sort_direction'] = 'DESC';
-	if( !isset( $options['rss'] ) ) $tmp['rss'] = '0';
+	if( !isset( $options['sort_on'] ) ) $tmp['sort_on']                = 'captured_on';
+	if( !isset( $options['sort_direction'] ) ) $tmp['sort_direction']  = 'DESC';
+	if( !isset( $options['rss'] ) ) $tmp['rss']                        = '0';
 
 	update_option( 'sspdt_defaults', $tmp );
 	
-	$options = get_option('sspdt_fancybox');
-	$tmp = $options;
+	$options   = get_option('sspdt_fancybox');
+	$tmp       = $options;
 	
-	if( !isset( $options['padding'] ) ) $tmp['padding'] = '10';
-	if( !isset( $options['margin'] ) ) $tmp['margin'] = '20';
+	if( !isset( $options['padding'] ) ) $tmp['padding']                        = '10';
+	if( !isset( $options['margin'] ) ) $tmp['margin']                          = '20';
 	
-	if( !isset( $options['titleShow'] ) ) $tmp['titleShow'] = '1';
-	if( !isset( $options['titlePosition'] ) ) $tmp['titlePosition'] = 'over';
-	if( !isset( $options['counterShow'] ) ) $tmp['counterShow'] = '0';
+	if( !isset( $options['titleShow'] ) ) $tmp['titleShow']                    = '1';
+	if( !isset( $options['titlePosition'] ) ) $tmp['titlePosition']            = 'over';
+	if( !isset( $options['counterShow'] ) ) $tmp['counterShow']                = '0';
 	
-	if( !isset( $options['overlayShow'] ) ) $tmp['overlayShow'] = '1';
-	if( !isset( $options['overlayOpacity'] ) ) $tmp['overlayOpacity'] = '0.3';
-	if( !isset( $options['overlayColor'] ) ) $tmp['overlayColor'] = '#666';
+	if( !isset( $options['overlayShow'] ) ) $tmp['overlayShow']                = '1';
+	if( !isset( $options['overlayOpacity'] ) ) $tmp['overlayOpacity']          = '0.3';
+	if( !isset( $options['overlayColor'] ) ) $tmp['overlayColor']              = '#666';
 	
-	if( !isset( $options['cyclic'] ) ) $tmp['cyclic'] = '0';
-	if( !isset( $options['showNavArrows'] ) ) $tmp['showNavArrows'] = '1';
-	if( !isset( $options['showCloseButton'] ) ) $tmp['showCloseButton'] = '1';
-	if( !isset( $options['enableEscapeButton'] ) ) $tmp['enableEscapeButton'] = '1';
+	if( !isset( $options['cyclic'] ) ) $tmp['cyclic']                          = '0';
+	if( !isset( $options['showNavArrows'] ) ) $tmp['showNavArrows']            = '1';
+	if( !isset( $options['showCloseButton'] ) ) $tmp['showCloseButton']        = '1';
+	if( !isset( $options['enableEscapeButton'] ) ) $tmp['enableEscapeButton']  = '1';
 	
-	if( !isset( $options['transitionIn'] ) ) $tmp['transitionIn'] = '1';
-	if( !isset( $options['speedIn'] ) ) $tmp['speedIn'] = '300';
-	if( !isset( $options['easingIn'] ) ) $tmp['easingIn'] = 'linear';
-	if( !isset( $options['transitionOut'] ) ) $tmp['transitionOut'] = '1';
-	if( !isset( $options['speedOut'] ) ) $tmp['speedOut'] = '400';
-	if( !isset( $options['easingOut'] ) ) $tmp['easingOut'] = 'linear';
-	if( !isset( $options['changeSpeed'] ) ) $tmp['changeSpeed'] = '400';
+	if( !isset( $options['transitionIn'] ) ) $tmp['transitionIn']              = '1';
+	if( !isset( $options['speedIn'] ) ) $tmp['speedIn']                        = '300';
+	if( !isset( $options['easingIn'] ) ) $tmp['easingIn']                      = 'linear';
+	if( !isset( $options['transitionOut'] ) ) $tmp['transitionOut']            = '1';
+	if( !isset( $options['speedOut'] ) ) $tmp['speedOut']                      = '400';
+	if( !isset( $options['easingOut'] ) ) $tmp['easingOut']                    = 'linear';
+	if( !isset( $options['changeSpeed'] ) ) $tmp['changeSpeed']                = '400';
 
 	update_option( 'sspdt_fancybox', $tmp );
 }

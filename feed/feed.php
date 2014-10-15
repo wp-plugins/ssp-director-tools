@@ -40,8 +40,9 @@ $decrypted_options = $crypt->decode($_GET['p']);
 
 if(md5($decrypted_options) != $_GET['c']) die('Incorrect feed parameters.');
 
-$options = doubleExplode('&', '=', $decrypted_options);
-$feed = new PhotoFeed( $sspd_api_key, $sspd_api_path, $sspd_feed_preview, $sspd_feed_full);
+$options    = doubleExplode('&', '=', $decrypted_options);
+$feed       = new PhotoFeed( $sspd_api_key, $sspd_api_path, $sspd_feed_preview, $sspd_feed_full);
+
 $feed->rss($options);
 
 

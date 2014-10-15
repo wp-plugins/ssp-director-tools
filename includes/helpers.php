@@ -51,16 +51,16 @@ function sspdt_nohtml($val) {
 //sanitize html formats
 function sspdt_html_format($val) {
 	$allowed = array(
-		"div" => array(
-			"style" => array(), 
-			"align" => array()
+		"div"     => array(
+			"style"  => array(), 
+			"align"  => array()
 		),
-		"p" =>	array("style" => array()),
-		"b" => array(),
-		"i" => array(),
-		"strong" => array(),
-		"em" => array(),
-		"br" =>array()
+		"p"       => array("style" => array()),
+		"b"       => array(),
+		"i"       => array(),
+		"strong"  => array(),
+		"em"      => array(),
+		"br"      => array()
 	);
 	return wp_kses($val, $allowed);
 }

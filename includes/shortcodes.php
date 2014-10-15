@@ -10,17 +10,17 @@ add_shortcode( 'sspd', 'sspdt_filter_content' );
  */
 function sspdt_filter_content($atts) {
 	extract( shortcode_atts( array(
-			'image' => '',
-			'align' => '',
-			'caption' => '',
-			'gallery' => '',
-			'album' => '',
-			'limit' => '',
-			'tags' => '',
-			'tagmode' => '',
-			'sort_on' => '',
+			'image'          => '',
+			'align'          => '',
+			'caption'        => '',
+			'gallery'        => '',
+			'album'          => '',
+			'limit'          => '',
+			'tags'           => '',
+			'tagmode'        => '',
+			'sort_on'        => '',
 			'sort_direction' => '',
-			'rss' => ''
+			'rss'            => ''
 			), $atts ) );
 
 			//helper info
@@ -37,8 +37,8 @@ function sspdt_filter_content($atts) {
 					
 				if($image == '') { //we make a photo grid with multiple images
 						
-					$defaults = get_option('sspdt_defaults');
-					$options = array();
+					$defaults  = get_option('sspdt_defaults');
+					$options   = array();
 
 					// Determine the scope of the request
 					if($gallery != '') {
@@ -113,11 +113,11 @@ function sspdt_filter_content($atts) {
 
 				} else { //we make a single image
 
-					$format_options = get_option('sspdt_format_options');
+					$format_options    = get_option('sspdt_format_options');
 
 					// Get the plugin settings
-					$showcaption = isset($format_options['thumb_caption']) ? $format_options['thumb_caption'] : false;
-					$thumbalign = isset($format_options['thumb_align']) ? $format_options['thumb_align'] : 'alignnone';
+					$showcaption       = isset($format_options['thumb_caption']) ? $format_options['thumb_caption'] : false;
+					$thumbalign        = isset($format_options['thumb_align']) ? $format_options['thumb_align'] : 'alignnone';
 
 					// Override alignment settings if align attribute provided
 					if($align == 'left') $thumbalign = 'alignleft';

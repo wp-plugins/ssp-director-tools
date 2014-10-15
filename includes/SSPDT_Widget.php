@@ -12,11 +12,11 @@ class SSPDT_Widget extends WP_Widget {
 
 	function SSPDT_Widget() {
 		$widget_ops = array(
-			'classname' => 'SSPDT_Widget', 
-			'description' => __('Displays a photogrid populated with SSP Director content.', 'sspdt')
+			'classname'      => 'SSPDT_Widget', 
+			'description'    => __('Displays a photogrid populated with SSP Director content.', 'sspdt')
 		);
 		$control_ops = array (
-			'width' => '300',
+			'width'  => '300',
 			'height' => '200'
 			);
 			parent::WP_Widget(false, $name = __('Director Photogrid', 'sspdt'), $widget_options = $widget_ops, $control_options = $control_ops);
@@ -30,27 +30,27 @@ class SSPDT_Widget extends WP_Widget {
 	 */
 	function form($instance) {
 		$defaults = array(
-        	'title' => __('Title', 'sspdt'), 
-        	'model' => 'album', 
-        	'model_id' => '0', 
-        	'limit' => '8', 
-        	'tags' => '', 
-        	'tagmode' => 'all', 
-        	'sort_on' => 'captured_on', 
-        	'sort_direction' => 'DESC',
-        	'element' => 'h3'
+        	'title'            => __('Title', 'sspdt'), 
+        	'model'            => 'album', 
+        	'model_id'         => '0', 
+        	'limit'            => '8', 
+        	'tags'             => '', 
+        	'tagmode'          => 'all', 
+        	'sort_on'          => 'captured_on', 
+        	'sort_direction'   => 'DESC',
+        	'element'          => 'h3'
         	);
 
-        	$instance = wp_parse_args( (array) $instance, $defaults );
-        	$title = $instance['title'];
-        	$model = $instance['model'];
-        	$model_id = $instance['model_id'];
-        	$limit = $instance['limit'];
-        	$tags = $instance['tags'];
-        	$tagmode = $instance['tagmode'];
-        	$sort_on = $instance['sort_on'];
-        	$sort_direction = $instance['sort_direction'];
-        	$element = $instance['element'];
+        	$instance          = wp_parse_args( (array) $instance, $defaults );
+        	$title             = $instance['title'];
+        	$model             = $instance['model'];
+        	$model_id          = $instance['model_id'];
+        	$limit             = $instance['limit'];
+        	$tags              = $instance['tags'];
+        	$tagmode           = $instance['tagmode'];
+        	$sort_on           = $instance['sort_on'];
+        	$sort_direction    = $instance['sort_direction'];
+        	$element           = $instance['element'];
 
         	?>
 <p>
@@ -165,15 +165,15 @@ class SSPDT_Widget extends WP_Widget {
 	 */
 	function update($new_instance, $old_instance) {
 		$instance = $old_instance;
-		$instance['title'] = strip_tags( $new_instance['title'] );
-		$instance['model'] = strip_tags( $new_instance['model'] );
-		$instance['model_id'] = strip_tags( $new_instance['model_id'] );
-		$instance['limit'] = strip_tags( $new_instance['limit'] );
-		$instance['tags'] = strip_tags( $new_instance['tags'] );
-		$instance['tagmode'] = strip_tags( $new_instance['tagmode'] );
-		$instance['sort_on'] = strip_tags( $new_instance['sort_on'] );
-		$instance['sort_direction'] = strip_tags( $new_instance['sort_direction'] );
-		$instance['element'] = strip_tags($new_instance['element'] );
+		$instance['title']            = strip_tags( $new_instance['title'] );
+		$instance['model']            = strip_tags( $new_instance['model'] );
+		$instance['model_id']         = strip_tags( $new_instance['model_id'] );
+		$instance['limit']            = strip_tags( $new_instance['limit'] );
+		$instance['tags']             = strip_tags( $new_instance['tags'] );
+		$instance['tagmode']          = strip_tags( $new_instance['tagmode'] );
+		$instance['sort_on']          = strip_tags( $new_instance['sort_on'] );
+		$instance['sort_direction']   = strip_tags( $new_instance['sort_direction'] );
+		$instance['element']          = strip_tags( $new_instance['element'] );
 		return $instance;
 	}
 
@@ -194,12 +194,12 @@ class SSPDT_Widget extends WP_Widget {
 			$sspdt->cache->set('sspdt');
 		}
 
-		$title = apply_filters( 'widget_title', $instance['title'] );
-		$elem = $instance['element'];
+		$title                = apply_filters( 'widget_title', $instance['title'] );
+		$elem                 = $instance['element'];
 
-		$presentation_ops = get_option('sspdt_helpers');
-		$presentation_helper = $presentation_ops['presentation_helper'];
-		$helper = array('class' => $presentation_helper );
+		$presentation_ops     = get_option('sspdt_helpers');
+		$presentation_helper  = $presentation_ops['presentation_helper'];
+		$helper               = array('class' => $presentation_helper );
 
 		echo $before_widget;
 		echo "<$elem class='widget-title'>$title</$elem>";

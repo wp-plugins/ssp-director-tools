@@ -65,11 +65,11 @@ class PhotoFeed extends Director {
 		}elseif($opts['model'] == 'album') {
 			$bulk = $this->album->get($opts['model_id']);
 		}
-		$title = $this->prep($bulk->name);
-		$description = $this->prep($bulk->description);
-		$created = date('r', (int) $bulk->created );
-		$modified = date('r', (int) $bulk->modified );
-		$protocol = $_SERVER['HTTPS'] != "" ? 'https://' : 'http://';
+		$title        = $this->prep($bulk->name);
+		$description  = $this->prep($bulk->description);
+		$created      = date('r', (int) $bulk->created );
+		$modified     = date('r', (int) $bulk->modified );
+		$protocol     = $_SERVER['HTTPS'] != "" ? 'https://' : 'http://';
 
 		header('Content-type: application/rss+xml');
 
@@ -91,9 +91,9 @@ class PhotoFeed extends Director {
 		foreach ($contents as $content){
 				
 			$description = "<img src='".$content->preview->url."' /><p>". ( $content->caption ? $this->prep($content->caption) : $this->prep($content->iptc->caption) ) ."</p>";
-			$url = $content->full->url;
-			$filesize = $content->filesize;
-			$guid = 'http://' . $this->api_path . '/content/' . $content->id;
+			$url         = $content->full->url;
+			$filesize    = $content->filesize;
+			$guid        = 'http://' . $this->api_path . '/content/' . $content->id;
 				
 			printf("		<item>\n");
 			printf("			<title>%s</title>\n", $content->title ? ($content->title) : $content->src);
