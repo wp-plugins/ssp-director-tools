@@ -2,7 +2,7 @@
 Contributors: parelius
 Tags: SlideShowPro, images, gallery, album, photos, fancybox, API, SSP, SSP Director, widget, shortcode, photo feed, RSS, feed
 Requires at least: 3.0
-Tested up to: 4.0
+Tested up to: 4.2
 Stable tag: 1.2
 
 SSP Director Tools give you means for integrating SlideShowPro Director content into a WordPress blog.
