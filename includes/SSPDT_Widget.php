@@ -10,7 +10,7 @@ require_once 'SSPDT.php';
 class SSPDT_Widget extends WP_Widget {
 
 
-	function SSPDT_Widget() {
+	public function __construct() {
 		$widget_ops = array(
 			'classname'      => 'SSPDT_Widget', 
 			'description'    => __('Displays a photogrid populated with SSP Director content.', 'sspdt')
@@ -19,7 +19,8 @@ class SSPDT_Widget extends WP_Widget {
 			'width'  => '300',
 			'height' => '200'
 			);
-			parent::WP_Widget(false, $name = __('Director Photogrid', 'sspdt'), $widget_options = $widget_ops, $control_options = $control_ops);
+		
+		parent::__construct(false, $name = __('Director Photogrid', 'sspdt'), $widget_options = $widget_ops, $control_options = $control_ops);
 	}
 
 
